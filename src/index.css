@@ -1,0 +1,12 @@
+@import "tailwindcss";
+/* src/index.css */
+
+:root {
+  color: rgb(255, 255, 255);
+  line-height: 1.5;
+  font-size: 1rem;
+  font-family: __Poppins_4de79c, __Poppins_Fallback_4de79c, Helvetica, Arial,
+    sans-serif;
+  font-weight: 400;
+  background-color: rgb(18, 24, 31);
+}

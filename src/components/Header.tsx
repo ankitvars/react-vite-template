@@ -29,7 +29,7 @@ const Header: React.FC = () => {
       setTimeout(() => {
         setCurrentMessage((prev) => (prev + 1) % messages.length);
         setIsAnimating(false);
-      }, 500);
+      }, 100);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
@@ -39,10 +39,10 @@ const Header: React.FC = () => {
       elevation={4}
       sx={{
         position: "fixed",
-        width: "100%",
-        zIndex: 1100,
+        width: "89%",
         color: "rgb(255,255,255)",
-        backgroundColor: "rgb(18, 24, 31)",
+        backgroundColor: "rgba(18, 24, 31,0.6)",
+        border: "none",
       }}
     >
       <AppBar position="static" color="transparent" elevation={0}>
@@ -57,28 +57,28 @@ const Header: React.FC = () => {
               display="flex"
               alignItems="center"
               gap={1}
+              justifyContent="center"
               className="relative overflow-hidden"
             >
               <Typography
-                variant="body1"
+                variant="subtitle1"
                 component={Link}
                 href=""
                 underline="none"
                 target="_blank"
                 sx={{ color: "inherit" }}
-                className={`transition-opacity duration-200 ease-in-out flex items-center ${
-                  isAnimating
+                className={`transition-opacity duration-200 ease-in-out flex items-center ${isAnimating
                     ? "opacity-0 translate-y-[-2px]"
                     : "opacity-100 translate-y-[2px]"
-                }`}
+                  }`}
               >
                 {currentMessage === 1 ? (
                   <FontAwesomeIcon icon={faBullhorn} className="mr-2" />
                 ) : (
                   <>
                     <span className="relative flex size-3 mx-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
-                      <span className="relative inline-flex size-3 rounded-full bg-sky-500"></span>
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[rgb(12,175,96)] opacity-75"></span>
+                      <span className="relative inline-flex h-3 w-3 rounded-full bg-[rgb(12,175,96)]"></span>
                     </span>
                   </>
                 )}{" "}

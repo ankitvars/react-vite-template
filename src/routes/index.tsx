@@ -5,7 +5,7 @@ import Header from '../components/Header'
 function AppRoutes() {
   return (
     <Router>
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<LandingPage />} />
         {/* <Route path="/about" element={<About />} />

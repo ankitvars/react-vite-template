@@ -43,6 +43,8 @@ const Header: React.FC = () => {
         color: "rgb(255,255,255)",
         backgroundColor: "rgba(18, 24, 31,0.6)",
         border: "none",
+        borderBottom: "1px solid rgba(145, 158, 171, 0.32)",
+        boxShadow: "0px 0px 0px rgba(0, 0, 0, 0.2)",
       }}
     >
       <AppBar position="static" color="transparent" elevation={0}>
@@ -82,7 +84,7 @@ const Header: React.FC = () => {
                     </span>
                   </>
                 )}{" "}
-                {messages[currentMessage]}
+                {messages[0]}
               </Typography>
             </Box>
           </Stack>

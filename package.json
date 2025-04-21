@@ -19,7 +19,7 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@motionone/react": "^10.16.4",
     "@mui/icons-material": "^7.0.1",
-    "@mui/material": "^7.0.1",
+    "@mui/material": "^7.0.2",
     "@tailwindcss/vite": "^4.1.1",
     "motion": "^12.6.3",
     "react": "^19.0.0",

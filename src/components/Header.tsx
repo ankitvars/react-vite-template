@@ -69,7 +69,7 @@ const Header: React.FC = () => {
                 underline="none"
                 target="_blank"
                 sx={{ color: "inherit" }}
-                className={`transition-opacity duration-200 ease-in-out flex items-center ${isAnimating
+                className={`transition-opacity duration-200 ease-in-out text-sm flex items-center ${isAnimating
                     ? "opacity-0 translate-y-[-2px]"
                     : "opacity-100 translate-y-[2px]"
                   }`}
@@ -84,7 +84,7 @@ const Header: React.FC = () => {
                     </span>
                   </>
                 )}{" "}
-                {messages[0]}
+                {messages[currentMessage]}
               </Typography>
             </Box>
           </Stack>

@@ -1,6 +1,7 @@
 import React from 'react';
 import LeftSideComponent from '../components/LeftSideComponent';
 import RightSideComponent from '../components/RightSideComponent';
+import { Divider } from '@mui/material';
 
 const LandingPage: React.FC = () => {
   return (
@@ -8,7 +9,6 @@ const LandingPage: React.FC = () => {
       style={{
         display: 'flex',
         flexDirection: 'row',
-        height: '100vh',
         backgroundColor: 'rgb(18,24,31)',
         color: '#fff',
       }}
@@ -16,6 +16,7 @@ const LandingPage: React.FC = () => {
       {/* Left side navigation */}
       <LeftSideComponent />
 
+      <Divider />
       {/* The rest of the page (right side) */}
       <div style={{ flex: 1 }}>
         <RightSideComponent />

@@ -26,30 +26,54 @@ const TrendingMarquee: React.FC = () => {
       speed={50}
       pauseOnHover={true}
       direction="left"
-      autoFill={true} // This prop ensures the content fills the container from the left.
+      autoFill={true}
+      style={{
+        maxWidth: "65vw",
+      }}
     >
       {repeatedCoins.map((coin, index) => (
-        <Box key={`${coin.id}-${index}`} sx={{ display: 'flex', alignItems: 'center', mx: 2, cursor: 'pointer' }}>
+        <Box
+          key={`${coin.id}-${index}`}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            mx: 2,
+            cursor: "pointer",
+            bgcolor: "rgba(121, 134, 134, 0.1)",
+            borderRadius: '10px',
+            py: 0.5
+          }}
+        >
           <Box
             sx={{
-              backgroundColor: '#12c15b',
+              backgroundColor: "#12c15b",
               width: 20,
               height: 20,
-              borderRadius: '50%',
-              color: 'white',
+              borderRadius: "50%",
+              color: "white",
               fontSize: 12,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
               mr: 1,
             }}
           >
             {coin.id}
           </Box>
-          <Typography sx={{ fontSize: 12, fontWeight: 600, color: 'white', mr: 1 }}>
+          <Typography
+            sx={{
+              fontSize: 12,
+              fontWeight: 600,
+              color: "white",
+              mr: 1,
+            }}
+          >
             {coin.name}
           </Typography>
-          <Avatar src={coin.icon} sx={{ width: 18, height: 18, opacity: 0.5 }} />
+          <Avatar
+            src={coin.icon}
+            sx={{ width: 18, height: 18, opacity: 0.5 }}
+          />
         </Box>
       ))}
     </Marquee>

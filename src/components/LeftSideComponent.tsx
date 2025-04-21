@@ -17,7 +17,14 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
 
 const LeftSideComponent: React.FC = () => {
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100vh",
+        borderRight: "1px solid rgb(121, 134, 134)",
+      }}
+    >
       <StyledDrawer variant="permanent" anchor="left">
         <LeftSideHeader />
         <Divider />

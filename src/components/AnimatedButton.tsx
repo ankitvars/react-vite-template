@@ -1,14 +1,12 @@
-'use client';
-
 import { Avatar, Button as MUIButton } from '@mui/material';
-import mooniIcon from '../assets/logo/GemPoints.svg';
+import mooniIcon from '../assets/logo/gpr.webp';
 import { motion, useAnimationFrame, useMotionTemplate, useMotionValue, useTransform } from 'motion/react';
 import { useRef } from 'react';
 
 const AnimatedButton = () => {
   return (
     <div
-      className="relative h-14 w-56 overflow-hidden p-[1px] bg-transparent"
+      className="relative h-14 w-44 overflow-hidden p-[1px] bg-transparent"
       style={{ borderRadius: '1.75rem' }}
     >
       <div className="absolute inset-0" style={{ borderRadius: '1.68rem' }}>
@@ -29,7 +27,7 @@ const AnimatedButton = () => {
         }}
       >
         <Avatar src={mooniIcon} sx={{ width: 24, height: 24 }} />
-        MOONI
+        GPR
       </MUIButton>
     </div>
   );

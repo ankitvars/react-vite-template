@@ -9,7 +9,12 @@ interface RightSideComponentProps {
 
 const RightSideComponent: React.FC<RightSideComponentProps> = ({ }: RightSideComponentProps) => {
   return (
-    <div style={{ flex: 1, overflowY: 'auto' }}>
+    <div
+      style={{
+        flex: 1,
+        overflowY: "auto",
+      }}
+    >
       <Header />
       <AnimatedSection />
       <ToolbarComponent />

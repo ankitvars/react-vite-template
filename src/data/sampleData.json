@@ -1,11 +1,11 @@
+
 {
   "allPresales": [
     {
-      "topImage": "/images/banner1.png",
       "ribbonText": "3% REF",
-      "status": "SALE LIVE",
-      "timeRemaining": "00:01:41:19",
-      "tagText": "AUDIT",
+      "topImage": "/assets/images/banner1.webp",
+      "status": "LAUNCHED",
+      "tagText": "LAUNCHED",
       "centerIcon": "/images/neptune-logo.png",
       "title": "Neptune Exchange",
       "subtitle": "Fair Launch",
@@ -18,10 +18,9 @@
       "lock": "90 Days"
     },
     {
-      "topImage": "/images/banner2.png",
+      "topImage": "/assets/images/banner2.webp",
       "ribbonText": "5% BONUS",
-      "status": "UPCOMING",
-      "timeRemaining": "00:05:12:30",
+      "status": "FINALIZED",
       "tagText": "KYC",
       "centerIcon": "/images/mercury-logo.png",
       "title": "Mercury DAO",
@@ -35,11 +34,10 @@
       "lock": "60 Days"
     },
     {
-      "topImage": "/images/banner3.png",
+      "topImage": "/assets/images/banner3.webp",
       "ribbonText": "2% REF",
-      "status": "LIVE",
-      "timeRemaining": "00:00:30:45",
-      "tagText": "AUDIT",
+      "status": "LAUNCHED",
+      "tagText": "LAUNCHED",
       "centerIcon": "/images/terra-logo.png",
       "title": "Terra Protocol",
       "subtitle": "Token Sale",
@@ -52,10 +50,9 @@
       "lock": "120 Days"
     },
     {
-      "topImage": "/images/banner4.png",
+      "topImage": "/assets/images/banner4.webp",
       "ribbonText": "1.5% REF",
-      "status": "UPCOMING",
-      "timeRemaining": "01:12:00:00",
+      "status": "FINALIZED",
       "tagText": "KYC",
       "centerIcon": "/images/sol-logo.png",
       "title": "Solana Hub",
@@ -69,11 +66,10 @@
       "lock": "180 Days"
     },
     {
-      "topImage": "/images/banner5.png",
+      "topImage": "/assets/images/banner5.webp",
       "ribbonText": "4% REF",
-      "status": "SALE LIVE",
-      "timeRemaining": "00:10:25:15",
-      "tagText": "AUDIT",
+      "status": "LAUNCHED",
+      "tagText": "LAUNCHED",
       "centerIcon": "/images/moon-logo.png",
       "title": "Moon Finance",
       "subtitle": "IDO",
@@ -88,10 +84,9 @@
   ],
   "myContributions": [
     {
-      "topImage": "/images/banner6.png",
+      "topImage": "/assets/images/banner6.webp",
       "ribbonText": "2.5% REF",
-      "status": "SALE LIVE",
-      "timeRemaining": "00:02:14:10",
+      "status": "LAUNCHED",
       "tagText": "KYC",
       "centerIcon": "/images/venus-logo.png",
       "title": "Venus Protocol",
@@ -105,11 +100,10 @@
       "lock": "100 Days"
     },
     {
-      "topImage": "/images/banner7.png",
+      "topImage": "/assets/images/banner7.webp",
       "ribbonText": "3.5% REF",
-      "status": "LIVE",
-      "timeRemaining": "00:00:45:00",
-      "tagText": "AUDIT",
+      "status": "LAUNCHED",
+      "tagText": "LAUNCHED",
       "centerIcon": "/images/juno-logo.png",
       "title": "Juno Network",
       "subtitle": "Token Sale",
@@ -122,10 +116,9 @@
       "lock": "90 Days"
     },
     {
-      "topImage": "/images/banner8.png",
+      "topImage": "/assets/images/banner8.webp",
       "ribbonText": "5% BONUS",
-      "status": "UPCOMING",
-      "timeRemaining": "02:00:00:00",
+      "status": "FINALIZED",
       "tagText": "KYC",
       "centerIcon": "/images/astro-logo.png",
       "title": "Astroport",
@@ -139,11 +132,10 @@
       "lock": "120 Days"
     },
     {
-      "topImage": "/images/banner9.png",
+      "topImage": "/assets/images/banner9.webp",
       "ribbonText": "2% REF",
-      "status": "SALE LIVE",
-      "timeRemaining": "00:03:30:20",
-      "tagText": "AUDIT",
+      "status": "LAUNCHED",
+      "tagText": "LAUNCHED",
       "centerIcon": "/images/terra-logo.png",
       "title": "Terra Classic",
       "subtitle": "IDO",
@@ -156,11 +148,10 @@
       "lock": "150 Days"
     },
     {
-      "topImage": "/images/banner10.png",
+      "topImage": "/assets/images/banner1.webpg",
       "ribbonText": "4% REF",
-      "status": "LIVE",
-      "timeRemaining": "00:00:20:10",
-      "tagText": "AUDIT",
+      "status": "LAUNCHED",
+      "tagText": "LAUNCHED",
       "centerIcon": "/images/solar-logo.png",
       "title": "Solar Finance",
       "subtitle": "Token Sale",
@@ -175,10 +166,9 @@
   ],
   "favorites": [
     {
-      "topImage": "/images/banner11.png",
+      "topImage": "/assets/images/banner1.webpg",
       "ribbonText": "3% REF",
-      "status": "UPCOMING",
-      "timeRemaining": "01:20:00:00",
+      "status": "FINALIZED",
       "tagText": "KYC",
       "centerIcon": "/images/luna-logo.png",
       "title": "Luna X",
@@ -192,11 +182,10 @@
       "lock": "90 Days"
     },
     {
-      "topImage": "/images/banner12.png",
+      "topImage": "/assets/images/banner1.webpg",
       "ribbonText": "5% BONUS",
-      "status": "LIVE",
-      "timeRemaining": "00:00:10:05",
-      "tagText": "AUDIT",
+      "status": "LAUNCHED",
+      "tagText": "LAUNCHED",
       "centerIcon": "/images/terra-logo.png",
       "title": "Terra Nova",
       "subtitle": "Token Sale",
@@ -209,10 +198,9 @@
       "lock": "120 Days"
     },
     {
-      "topImage": "/images/banner13.png",
+      "topImage": "/assets/images/banner1.webpg",
       "ribbonText": "2% REF",
-      "status": "SALE LIVE",
-      "timeRemaining": "00:04:00:00",
+      "status": "LAUNCHED",
       "tagText": "KYC",
       "centerIcon": "/images/sol-logo.png",
       "title": "Solstice Protocol",
@@ -226,11 +214,10 @@
       "lock": "140 Days"
     },
     {
-      "topImage": "/images/banner14.png",
+      "topImage": "/assets/images/banner1.webpg",
       "ribbonText": "4% REF",
-      "status": "LIVE",
-      "timeRemaining": "00:00:15:25",
-      "tagText": "AUDIT",
+      "status": "LAUNCHED",
+      "tagText": "LAUNCHED",
       "centerIcon": "/images/moon-logo.png",
       "title": "Moonbeam Network",
       "subtitle": "IDO",
@@ -243,10 +230,9 @@
       "lock": "160 Days"
     },
     {
-      "topImage": "/images/banner15.png",
+      "topImage": "/assets/images/banner1.webpg",
       "ribbonText": "1% REF",
-      "status": "UPCOMING",
-      "timeRemaining": "03:00:00:00",
+      "status": "FINALIZED",
       "tagText": "KYC",
       "centerIcon": "/images/venus-logo.png",
       "title": "Venus Labs",

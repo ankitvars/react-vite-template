@@ -38,8 +38,6 @@ const Header: React.FC = () => {
     <Paper
       elevation={4}
       sx={{
-        position: "fixed",
-        width: "89%",
         color: "rgb(255,255,255)",
         backgroundColor: "rgba(18, 24, 31,0.6)",
         border: "none",

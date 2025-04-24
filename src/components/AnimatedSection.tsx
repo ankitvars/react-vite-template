@@ -1,6 +1,6 @@
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import { Box } from '@mui/material';
+import { Avatar, Box } from '@mui/material';
 import React from 'react';
+import trendingIcon from '../assets/icons/trending.svg';
 import AnimatedButton from './AnimatedButton';
 import TrendingMarquee from './TrendingMarquee';
 
@@ -12,7 +12,6 @@ const AnimatedSection: React.FC = () => {
         alignItems: 'center',
         padding: '10px 20px',
         overflow: 'hidden',
-        marginTop: 10,
       }}
     >
       <AnimatedButton />
@@ -34,7 +33,17 @@ const AnimatedSection: React.FC = () => {
           },
         }}
       >
-        <TrendingUpIcon sx={{ color: 'white', fontSize: 24 }} />
+        <Avatar
+          src={trendingIcon}
+          sx={{
+            width: 24,
+            height: 24,
+            filter: "invert(1) brightness(1)",
+            "&:hover": {
+              filter: "invert(1) brightness(2)",
+            },
+          }}
+        />
       </Box>
       <TrendingMarquee />
     </Box>

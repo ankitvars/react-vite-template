@@ -19,7 +19,7 @@
     },
     {
       "topImage": "/assets/images/banner2.webp",
-      "ribbonText": "5% BONUS",
+      "ribbonText": "5% REF",
       "status": "FINALIZED",
       "tagText": "KYC",
       "centerIcon": "/images/mercury-logo.png",
@@ -51,7 +51,7 @@
     },
     {
       "topImage": "/assets/images/banner4.webp",
-      "ribbonText": "1.5% REF",
+      "ribbonText": "1% REF",
       "status": "FINALIZED",
       "tagText": "KYC",
       "centerIcon": "/images/sol-logo.png",
@@ -117,7 +117,7 @@
     },
     {
       "topImage": "/assets/images/banner8.webp",
-      "ribbonText": "5% BONUS",
+      "ribbonText": "5% REF",
       "status": "FINALIZED",
       "tagText": "KYC",
       "centerIcon": "/images/astro-logo.png",
@@ -183,7 +183,7 @@
     },
     {
       "topImage": "/assets/images/banner1.webpg",
-      "ribbonText": "5% BONUS",
+      "ribbonText": "5% REF",
       "status": "LAUNCHED",
       "tagText": "LAUNCHED",
       "centerIcon": "/images/terra-logo.png",

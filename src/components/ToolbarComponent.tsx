@@ -1,29 +1,36 @@
-import React from "react";
-import {
-  Stack,
-  ToggleButtonGroup,
-  ToggleButton,
-  TextField,
-  InputAdornment,
-  Tabs,
-  Tab,
-  IconButton,
-  Box,
-} from "@mui/material";
 import AppsIcon from "@mui/icons-material/Apps";
-import ViewListIcon from "@mui/icons-material/ViewList";
-import SearchIcon from "@mui/icons-material/Search";
-import ScienceIcon from "@mui/icons-material/Science";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import FilterListIcon from "@mui/icons-material/FilterList";
-import salesData from "../data/sampleData.json";
-import { SaleList } from "./SaleList";
+import ScienceIcon from "@mui/icons-material/Science";
+import SearchIcon from "@mui/icons-material/Search";
+import ViewListIcon from "@mui/icons-material/ViewList";
+import {
+  Box,
+  Button,
+  InputAdornment,
+  Stack,
+  Tab,
+  Tabs,
+  TextField,
+  ToggleButton,
+  ToggleButtonGroup
+} from "@mui/material";
+import React from "react";
+import TemporaryDrawer from "./DrawerFilter";
 
-const ToolbarComponent: React.FC = () => {
+type ToolBarComponentProps = {
+  tabIndex: number;
+  setTabIndex: (index: number) => void;
+}
+
+const ToolbarComponent = ({ tabIndex, setTabIndex }: ToolBarComponentProps) => {
   const [view, setView] = React.useState<"grid" | "list">("grid");
   const [searchTerm, setSearchTerm] = React.useState("");
-  const [tabIndex, setTabIndex] = React.useState(0);
+  const [open, setOpen] = React.useState(false);
 
+  const toggleDrawer = (newOpen: boolean) => () => {
+    setOpen(newOpen);
+  };
   const handleViewChange = (
     _event: React.MouseEvent<HTMLElement>,
     nextView: "grid" | "list" | null
@@ -43,14 +50,6 @@ const ToolbarComponent: React.FC = () => {
     setTabIndex(newValue);
     console.log("Tab changed to index:", newValue);
   };
-
-  const handleFilterClick = () => {
-    console.log("Filters button clicked");
-  };
-
-  const { allPresales, myContributions, favorites } = salesData;
-  const currentData =
-    tabIndex === 0 ? allPresales : tabIndex === 1 ? myContributions : favorites;
 
   return (
     <>
@@ -220,13 +219,16 @@ const ToolbarComponent: React.FC = () => {
         </Box>
 
         {/* Filters button */}
-        <IconButton
+        <Button
           size="small"
-          onClick={handleFilterClick}
+          endIcon={<FilterListIcon fontSize="large" />}
+          onClick={toggleDrawer(true)}
           aria-label="filters"
           sx={{
-            display: "flex",
-            alignItems: "center",
+            ml: 1,
+            fontSize: "0.75rem",
+            textTransform: "capitalize",
+            fontWeight: 700,
             color: "rgb(121, 134, 134)",
             "&:hover": {
               color: "white",
@@ -236,15 +238,12 @@ const ToolbarComponent: React.FC = () => {
             },
           }}
         >
-          <Box component="span" sx={{ ml: 1, fontSize: "0.875rem" }}>
-            Filters
-          </Box>
-          <FilterListIcon fontSize="small" />
-        </IconButton>
+          Filters
+        </Button>
       </Stack>
 
-      {/* Render the SaleList with filtered data */}
-      <SaleList data={currentData} />
+
+      {open && <TemporaryDrawer open={open} toggleDrawer={toggleDrawer} />}
     </>
   );
 };

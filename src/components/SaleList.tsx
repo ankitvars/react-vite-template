@@ -52,7 +52,8 @@ export const SaleList: React.FC<SaleListProps> = ({ data }) => {
   );
 
   return isGridView ? (
-    <Box sx={gridContainerStyle}>{renderedCards}</Box>
+    <Box sx={gridContainerStyle}>{renderedCards}
+    </Box>
   ) : (
     <Stack spacing={2} sx={{ px: 2, py: 1 }}>{renderedCards}</Stack>
   );

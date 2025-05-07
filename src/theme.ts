@@ -1,21 +1,25 @@
-// theme.ts
 import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: 'rgb(18, 24, 31)', 
+      main: '#fff', // Primary color as white
+      contrastText: 'rgb(18, 24, 31)', // Text on primary
     },
     secondary: {
       main: 'rgb(12, 175, 96)',
     },
     background: {
       default: 'rgb(18, 24, 31)',
+      paper: 'rgb(22, 29, 39)', // Optional: paper background
+    },
+    text: {
+      primary: '#fff', // Default text color as white
+      secondary: '#ccc', // Optional: secondary text color
     },
   },
   typography: {
-    fontFamily:
-      '__Poppins_4de79c, __Poppins_Fallback_4de79c, Helvetica, Arial, sans-serif',
+    fontFamily: 'Poppins, Helvetica, Arial, sans-serif',
   },
 });
 

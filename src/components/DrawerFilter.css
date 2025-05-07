@@ -1,0 +1,273 @@
+.MuiDrawer-paper.drawer-main {
+  /* duplicate your styles here for higher specificity */
+  backdrop-filter: blur(20px);
+  background-color: rgba(22, 29, 39, 0.6);
+  background-image: url(../assets/cyan-blur.png), url(../assets/green-blur.png);
+  background-repeat: no-repeat, no-repeat;
+  background-position: right top, left bottom;
+  background-size: 50%, 50%;
+  box-shadow: rgba(0, 0, 0, 0.24) -40px 40px 80px -8px;
+  width: 300px;
+}
+
+.drawer-stack-container {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.drawer-stack {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: end;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  padding-left: 16px;
+  padding-right: 8px;
+  padding-top: 16px;
+  background-color: rgba(22, 29, 39, 0.9);
+}
+
+.MuiButton-root.drawer-close-btn,
+.MuiButtonBase-root.drawer-close-btn {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(145, 158, 171);
+  outline: 0px;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  margin: 0px;
+  text-decoration: none;
+  flex: 0 0 auto;
+  /* padding: 8px 8px; */
+  padding: 16px;
+  border-radius: 50%;
+  overflow: visible;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: fit-content;
+  scale: 0.7;
+  margin-top: -15px;
+}
+
+.MuiButton-root.drawer-close-btn:hover {
+  background-color: rgba(145, 158, 171, 0.08);
+}
+
+.MuiButton-root.drawer-close-icon {
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  max-width: 20px;
+}
+
+.drawer-content .simplebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.drawer-content-section {
+  max-height: 100%;
+}
+
+.MuiFormLabel-root.drawer-form-label {
+  padding: 0px;
+  position: relative;
+  color: rgb(99, 115, 129);
+  line-height: 1.57143;
+  font-size: 0.75rem;
+  font-family: __Poppins_4de79c, __Poppins_Fallback_4de79c, Helvetica, Arial,
+    sans-serif;
+  font-weight: 400;
+}
+
+.MuiButton-root.drawer-uncheck-btn,
+.MuiButtonBase-root.drawer-uncheck-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  font-weight: 700;
+  line-height: 1.71429;
+  text-transform: capitalize;
+  font-family: __Poppins_4de79c, __Poppins_Fallback_4de79c, Helvetica, Arial,
+    sans-serif;
+  min-width: 64px;
+  color: inherit;
+  box-shadow: none;
+  height: 30px;
+  font-size: 13px;
+  outline: 0px;
+  margin: 0px;
+  text-decoration: none;
+  padding: 3px 8px;
+  border-radius: 8px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(145, 158, 171, 0.32);
+}
+
+.MuiStack-root.drawer-chain-filter {
+  display: flex;
+  flex-flow: wrap;
+  max-width: 216px;
+}
+
+.tier-images {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  filter: none;
+  transition: 0.3s;
+}
+
+.MuiFormGroup-root.badge-form-group {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.MuiFormControlLabel-root.badge-label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  margin-left: -11px;
+  margin-right: 16px;
+}
+
+.custom-checkbox-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: 0px;
+  border: 0px;
+  margin: 0px;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-decoration: none;
+  border-radius: 50% !important;
+  color: rgb(194, 194, 194);
+  padding: 8px;
+}
+
+.custom-checkbox-square {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: 0px;
+  border: 0px;
+  margin: 0px;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-decoration: none;
+  border-radius: 4px !important;
+  color: rgb(194, 194, 194);
+  padding: 8px;
+}
+
+.badge-label .MuiFormControlLabel-label {
+  line-height: 1.57143;
+  font-size: 0.75rem;
+  font-family: __Poppins_4de79c, __Poppins_Fallback_4de79c, Helvetica, Arial,
+    sans-serif;
+  font-weight: 500;
+}
+
+.MuiCheckbox-root.Mui-checked,
+.MuiCheckbox-root.MuiCheckbox-indeterminate {
+  color: rgb(12, 175, 96) !important;
+}
+
+.drawer-fieldset {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  vertical-align: top;
+}
+
+.MuiStack-root.drawer-actions {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 16px;
+}
+
+.MuiButton-root.drawer-action-btn,
+.MuiButtonBase-root.drawer-action-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  font-weight: 700;
+  line-height: 1.71429;
+  font-size: 0.875rem;
+  text-transform: capitalize;
+  font-family: __Poppins_4de79c, __Poppins_Fallback_4de79c, Helvetica, Arial, sans-serif;
+  color: inherit;
+  box-shadow: none;
+  width: 90%;
+  outline: 0px;
+  margin: 0px;
+  text-decoration: none;
+  padding: 5px 12px;
+  border-radius: 8px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(145, 158, 171, 0.32);
+}

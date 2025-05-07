@@ -22,7 +22,7 @@ const messages = [
 const Header: React.FC = () => {
   const [currentMessage, setCurrentMessage] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-
+  
   useEffect(() => {
     const interval = setInterval(() => {
       setIsAnimating(true);

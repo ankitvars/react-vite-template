@@ -1,0 +1,261 @@
+.salecard-root {
+  position: relative;
+  border-radius: 16px;
+}
+.salecard-root::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(90deg, #7928ca, #ff0080) top,
+    linear-gradient(180deg, #7928ca, #ff0080) right,
+    linear-gradient(270deg, #7928ca, #ff0080) bottom,
+    linear-gradient(0deg, #7928ca, #ff0080) left;
+  background-repeat: no-repeat;
+  background-size: 100% 2px, 2px 100%, 100% 2px, 2px 100%;
+  background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+.salecard-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: visible;
+  transition: 0.3s;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 364px;
+}
+.salecard-card:hover {
+  transform: translateY(-8px);
+}
+.salecard-topicon-stack {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  transform: translate(-50%);
+  margin-left: 50%;
+  top: -25px;
+  border-radius: 50%;
+}
+.salecard-topicon-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 48px;
+  height: 58px;
+}
+.salecard-topicon-bg {
+  position: absolute;
+  bottom: 29px;
+  width: 32px;
+  height: 16px;
+  background: rgb(18, 24, 31);
+}
+.salecard-topicon-img {
+  position: relative;
+  right: 0px;
+  top: -4px;
+  width: 36px;
+  height: 48px;
+  z-index: 3;
+  background: transparent;
+}
+.salecard-topicon-triangle {
+  position: absolute;
+  bottom: 4px;
+  width: 0px;
+  height: 0px;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-top: 27px solid rgb(18, 24, 31);
+}
+.salecard-pushpin {
+  user-select: none;
+  width: 1em;
+  display: inline-block;
+  fill: currentcolor;
+  flex-shrink: 0;
+  font-size: 1.5rem;
+  height: 30px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  transform: rotate(45deg);
+  color: rgb(99, 115, 129);
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.MuiStack-root.salecard-ribbon-stack {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding: 2.4px 32px;
+  top: 20px;
+  right: -50px;
+  width: 160px;
+  position: absolute;
+  background-color: rgb(12, 175, 96);
+  transform: rotate(45deg);
+  z-index: 2;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.MuiTypography-root.salecard-ribbon-text {
+  margin: 0px;
+  font-family: __Poppins_4de79c, __Poppins_Fallback_4de79c, Helvetica, Arial,
+    sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  font-size: 14px;
+}
+.salecard-media {
+  color: transparent;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+/* .salecard-content {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  position: relative;
+  z-index: 1;
+  background-color: rgb(22, 29, 39) !important;
+  color: #fff !important;
+  background-image: none !important;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 0px,
+    rgba(0, 0, 0, 0.12) 0px 12px 24px -4px !important;
+  width: 100%;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  border-radius: 16px !important;
+} */
+.MuiCard-root.salecard-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 16px 16px;
+}
+.salecard-status-dot {
+  color: rgb(142, 51, 255) !important;
+  font-size: 0.75rem !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50%;
+  background: rgb(142, 51, 255);
+}
+.salecard-status {
+  margin: 0px;
+  line-height: 1.57143;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+@media (min-width: 0px) {
+    .salecard-status {
+        font-size: 0.6875rem;
+    }
+}
+.salecard-timer {
+  color: #fff !important;
+  display: block;
+}
+.salecard-tag {
+  border-color: #fff !important;
+  color: #fff !important;
+  height: 20px !important;
+  font-size: 0.65rem !important;
+}
+.salecard-centericon {
+  width: 24px;
+  height: 58px;
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  flex-shrink: 0;
+  padding-top: 16px;
+  min-width: 42px;
+}
+.salecard-titlebox {
+  display: flex;
+  flex-direction: column;
+  white-space: pre;
+  overflow: hidden;
+}
+.salecard-title {
+  font-size: 14px !important;
+  color: #fff !important;
+  font-weight: 500 !important;
+}
+.salecard-subtitle {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #fff !important;
+}
+.salecard-maxbuy {
+  font-size: 12px !important;
+  color: lightgray !important;
+}
+.salecard-progress {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  z-index: 0;
+  background-color: rgba(12, 175, 96, 0.24);
+  height: 8px;
+  border-radius: 1px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.salecard-progress.MuiLinearProgress-colorPrimary {
+  background-color: rgba(153, 153, 153, 0.25);
+  border-radius: 4px;
+}
+
+.salecard-progress .MuiLinearProgress-dashed {
+  display: none;
+}
+
+.salecard-progress .MuiLinearProgress-bar {
+  border-radius: 4px;
+}
+
+.salecard-progress .MuiLinearProgress-bar1Buffer {
+  background: linear-gradient(90deg, rgba(22, 29, 39, 0.7) 0%, rgb(12, 175, 96) 33%);
+  overflow: hidden;
+}
+
+.salecard-progress .MuiLinearProgress-bar2Buffer {
+  background-color: rgb(6, 87, 48);
+}
+
+.salecard-progress .MuiLinearProgress-bar {
+   background-color: rgb(6, 87, 48);
+  border-radius: 16px !important;
+}
+
+.salecard-label {
+  font-weight: 400 !important;
+  line-height: 1.57143 !important;
+  font-size: 0.75rem !important;
+  color: #fff !important;
+}
+.salecard-value {
+  font-weight: 400 !important;
+  color: rgb(12, 175, 96) !important;
+  line-height: 1.57143 !important;
+}
+.salecard-iconbtn {
+  color: rgb(121, 134, 134) !important;
+}

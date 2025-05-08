@@ -9,7 +9,9 @@ import {
 } from "@mui/material";
 import { SaleCardProps } from "./SaleCard";
 import "./SaleListView.css";
-
+import badgeIcon from "../assets/promotions/2.svg";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import topImage from '../assets/chains/shido.png';
 interface SaleListViewProps {
   data: SaleCardProps[];
 }
@@ -40,17 +42,17 @@ export const SaleListView: React.FC<SaleListViewProps> = ({ data }) => (
               anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
               badgeContent={
                 <Avatar
-                  src={"/promotions/5.svg"}
-                  className="listAvatar"
+                  src={badgeIcon}
+                  className="listAvatarBadge"
                   sx={{ width: 20, height: 20 }}
                 />
               }
               className="listBadge"
             >
               <Avatar
-                src={sale.topImage}
+                src={topImage}
                 alt={sale.title}
-                className="listAvatar"
+                className="listAvatarImg"
                 sx={{ width: 40, height: 40 }}
               />
             </Badge>
@@ -58,6 +60,7 @@ export const SaleListView: React.FC<SaleListViewProps> = ({ data }) => (
               {sale.title}
             </Typography>
           </Stack>
+
           {/* Blockchain */}
           <Stack
             direction="row"
@@ -67,18 +70,20 @@ export const SaleListView: React.FC<SaleListViewProps> = ({ data }) => (
           >
             <Box
               component="img"
-              src={"/chains/sol.png"}
+              src={"/src/assets/chains/sol.png"}
               className="listChainIcon"
               sx={{ width: 24, height: 24 }}
             />
-            <Typography noWrap variant="body2">
-              {sale.subtitle}
+            <Typography className="listChainText" noWrap variant="body2">
+              SOL
             </Typography>
           </Stack>
+
           {/* Sale Type */}
           <Stack className="listSaleType">
-            <Typography variant="body1">{sale.tagText}</Typography>
+            <Typography variant="subtitle2" className="listSaleTypeText">{sale.tagText}</Typography>
           </Stack>
+
           {/* Sale Status */}
           <Stack
             direction="row"
@@ -86,30 +91,36 @@ export const SaleListView: React.FC<SaleListViewProps> = ({ data }) => (
             alignItems="center"
             className="listStatus"
           >
-            <Typography variant="body2">{sale.status}</Typography>
-            <Typography variant="body1">
-              <time dateTime={sale.timeRemaining}>{sale.timeRemaining}</time>
+            <Stack className="listStatusStack">
+              <FiberManualRecordIcon className="salecard-status-dot" />
+              <Typography variant="caption" className="listStatusText">{sale.status}</Typography>
+            </Stack>
+            <Typography className="listTimer">
+              <time dateTime={sale.timeRemaining}>{"2025-05-19"}</time>
             </Typography>
           </Stack>
+
           {/* Progress */}
           <Stack className="listProgress">
             <LinearProgress
-              variant="determinate"
+              variant="buffer"
               value={Math.min(sale.progressPercent, 100)}
-              sx={{ height: 8, borderRadius: 4, mb: 1 }}
+              valueBuffer={100}
+              className="custom-progress-bar"
             />
             <Stack
               direction="row"
               justifyContent="space-between"
               alignItems="center"
+              className="listProgressDetails"
             >
-              <Typography variant="body2">
+              <Typography className="listProgressLabel" variant="body2">
                 {sale.progressValueSol} <small>SOL</small>
               </Typography>
               {sale.hardcap === "∞" ? (
                 <svg
-                  style={{ width: 20, height: 20, color: "rgb(12, 175, 96)" }}
                   viewBox="0 0 24 24"
+                  className="listProgressSvg"
                 >
                   <path
                     fill="currentColor"
@@ -117,7 +128,7 @@ export const SaleListView: React.FC<SaleListViewProps> = ({ data }) => (
                   />
                 </svg>
               ) : (
-                <Typography variant="body2">{sale.hardcap}</Typography>
+                <Typography className="listProgressValue">{sale.hardcap}</Typography>
               )}
             </Stack>
           </Stack>

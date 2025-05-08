@@ -4,6 +4,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { SaleCard, SaleCardProps } from "./SaleCard";
 import { SkeletonSaleCard } from "./SkeletonSaleCard";
 import { SaleListView } from "./SaleListView";
+import { SkeletonSaleListView } from "./SkeletonSaleListView";
 
 type ViewMode = "grid" | "list";
 
@@ -22,7 +23,7 @@ const VIEW_MODES = {
 
 export const SaleList: React.FC<SaleListProps> = ({
   data,
-  fetchMoreData = () => {},
+  fetchMoreData = () => { },
   hasMore = false,
   loadingMore = false,
   view,
@@ -79,9 +80,7 @@ export const SaleList: React.FC<SaleListProps> = ({
         isGridView ? (
           <Box sx={gridContainerStyle}>{skeletons}</Box>
         ) : (
-          <Stack spacing={2} sx={{ px: 2, py: 1 }}>
-            {skeletons}
-          </Stack>
+          <SkeletonSaleListView />
         )
       ) : (
         <InfiniteScroll
@@ -93,9 +92,7 @@ export const SaleList: React.FC<SaleListProps> = ({
               isGridView ? (
                 <Box sx={gridContainerStyle}>{loadingMoreSkeletons}</Box>
               ) : (
-                <Stack spacing={2} sx={{ px: 2, py: 1 }}>
-                  {loadingMoreSkeletons}
-                </Stack>
+                <SkeletonSaleListView count={3} />
               )
             ) : null
           }

@@ -22,7 +22,7 @@ const messages = [
 const Header: React.FC = () => {
   const [currentMessage, setCurrentMessage] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setIsAnimating(true);
@@ -67,17 +67,18 @@ const Header: React.FC = () => {
                 underline="none"
                 target="_blank"
                 sx={{ color: "inherit" }}
-                className={`transition-opacity duration-200 ease-in-out text-sm flex items-center ${isAnimating
+                className={`transition-opacity duration-200 ease-in-out text-sm flex items-center ${
+                  isAnimating
                     ? "opacity-0 translate-y-[-2px]"
                     : "opacity-100 translate-y-[2px]"
-                  }`}
+                }`}
               >
                 {currentMessage === 1 ? (
                   <FontAwesomeIcon icon={faBullhorn} className="mr-2" />
                 ) : (
                   <>
                     <span className="relative flex size-3 mx-2">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[rgb(12,175,96)] opacity-75"></span>
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[rgb(12,175,96)] opacity-75"></span>
                       <span className="relative inline-flex h-3 w-3 rounded-full bg-[rgb(12,175,96)]"></span>
                     </span>
                   </>
@@ -112,7 +113,12 @@ const Header: React.FC = () => {
                   alt="solsale"
                   sx={{ width: 12, height: 12, mr: 0.5 }}
                 />
-                <Typography variant="caption" fontSize="11px" color="#fff" fontWeight={600}>
+                <Typography
+                  variant="caption"
+                  fontSize="11px"
+                  color="#fff"
+                  fontWeight={600}
+                >
                   SolSale
                 </Typography>
               </Button>

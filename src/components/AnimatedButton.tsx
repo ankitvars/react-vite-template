@@ -1,15 +1,21 @@
-import { Avatar, Button as MUIButton } from '@mui/material';
-import mooniIcon from '../assets/chains/abey.png';
-import { motion, useAnimationFrame, useMotionTemplate, useMotionValue, useTransform } from 'motion/react';
-import { useRef } from 'react';
+import { Avatar, Button as MUIButton } from "@mui/material";
+import mooniIcon from "../assets/chains/abey.png";
+import {
+  motion,
+  useAnimationFrame,
+  useMotionTemplate,
+  useMotionValue,
+  useTransform,
+} from "motion/react";
+import { useRef } from "react";
 
 const AnimatedButton = () => {
   return (
     <div
       className="relative h-14 w-44 overflow-hidden p-[1px] bg-transparent"
-      style={{ borderRadius: '1.75rem' }}
+      style={{ borderRadius: "1.75rem" }}
     >
-      <div className="absolute inset-0" style={{ borderRadius: '1.68rem' }}>
+      <div className="absolute inset-0" style={{ borderRadius: "1.68rem" }}>
         <MovingBorder duration={3000} rx="30%" ry="30%">
           <div className="h-20 w-20 bg-[radial-gradient(#0ea5e9_40%,transparent_60%)] opacity-80" />
         </MovingBorder>
@@ -19,11 +25,11 @@ const AnimatedButton = () => {
         fullWidth
         className="relative flex items-center justify-center gap-2 border border-slate-800 bg-slate-900/80 text-white backdrop-blur-xl normal-case text-sm px-4 py-2"
         style={{
-          borderRadius: '1.68rem',
-          height: '100%',
+          borderRadius: "1.68rem",
+          height: "100%",
           zIndex: 10,
-          color: 'white',
-          textTransform: 'none',
+          color: "white",
+          textTransform: "none",
         }}
       >
         <Avatar src={mooniIcon} sx={{ width: 24, height: 24 }} />
@@ -46,7 +52,7 @@ const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: string | number | React.ReactNode | undefined; 
+  [key: string]: string | number | React.ReactNode | undefined;
 }) => {
   const pathRef = useRef<SVGRectElement | null>(null);
   const progress = useMotionValue<number>(0);
@@ -59,8 +65,14 @@ const MovingBorder = ({
     }
   });
 
-  const x = useTransform(progress, (val: number) => pathRef.current?.getPointAtLength?.(val).x);
-  const y = useTransform(progress, (val: number) => pathRef.current?.getPointAtLength?.(val).y);
+  const x = useTransform(
+    progress,
+    (val: number) => pathRef.current?.getPointAtLength?.(val).x,
+  );
+  const y = useTransform(
+    progress,
+    (val: number) => pathRef.current?.getPointAtLength?.(val).y,
+  );
 
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
 
@@ -74,14 +86,21 @@ const MovingBorder = ({
         height="100%"
         {...otherProps}
       >
-        <rect fill="none" width="100%" height="100%" rx={rx} ry={ry} ref={pathRef} />
+        <rect
+          fill="none"
+          width="100%"
+          height="100%"
+          rx={rx}
+          ry={ry}
+          ref={pathRef}
+        />
       </svg>
       <motion.div
         style={{
-          position: 'absolute',
+          position: "absolute",
           top: 0,
           left: 0,
-          display: 'inline-block',
+          display: "inline-block",
           transform,
         }}
       >

@@ -1,7 +1,7 @@
 // src/components/Loading.tsx
-import React from 'react';
-import { Box, CircularProgress, Typography } from '@mui/material';
-import { keyframes } from '@mui/system';
+import React from "react";
+import { Box, CircularProgress, Typography } from "@mui/material";
+import { keyframes } from "@mui/system";
 
 const fadeIn = keyframes`
   from {
@@ -30,19 +30,20 @@ const Loading: React.FC = () => {
   return (
     <Box
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh',
-        width: '100vw',
-        position: 'fixed',
-        background: 'linear-gradient(135deg, rgba(18,24,31,0.8), rgba(12,175,96,0.6))',
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+        width: "100vw",
+        position: "fixed",
+        background:
+          "linear-gradient(135deg, rgba(18,24,31,0.8), rgba(12,175,96,0.6))",
         animation: `${fadeIn} 0.5s ease-out`,
-        color: '#fff',
-        textAlign: 'center',
+        color: "#fff",
+        textAlign: "center",
         p: 2,
-        fontFamily: 'inherit',
+        fontFamily: "inherit",
         zIndex: 999999,
       }}
     >

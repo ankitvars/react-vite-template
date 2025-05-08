@@ -17,7 +17,7 @@ import {
 import topIcon from "../assets/promotions/2.svg";
 import centerIcon from "../assets/chains/sol.png";
 import "./SaleCard.css";
-import Grid from '@mui/material/Grid';
+import Grid from "@mui/material/Grid";
 
 export interface SaleCardProps {
   topImage: string;
@@ -149,7 +149,13 @@ export const SaleCard: React.FC<SaleCardProps> = ({
           {/* Softcap and Hardcap section */}
           <Grid container className="salecard-info-grid">
             <Grid className="salecard-info-item">
-              <Stack direction="row" alignItems="center" justifyContent="center" gap={1} className="salecard-info-stack">
+              <Stack
+                direction="row"
+                alignItems="center"
+                justifyContent="center"
+                gap={1}
+                className="salecard-info-stack"
+              >
                 <Typography className="salecard-info-label" variant="body2">
                   Softcap
                 </Typography>
@@ -159,7 +165,13 @@ export const SaleCard: React.FC<SaleCardProps> = ({
               </Stack>
             </Grid>
             <Grid className="salecard-info-item">
-              <Stack direction="row" alignItems="center" justifyContent="center" gap={1} className="salecard-info-stack">
+              <Stack
+                direction="row"
+                alignItems="center"
+                justifyContent="center"
+                gap={1}
+                className="salecard-info-stack"
+              >
                 <Typography className="salecard-info-label" variant="body2">
                   Hardcap
                 </Typography>
@@ -190,7 +202,13 @@ export const SaleCard: React.FC<SaleCardProps> = ({
             </Grid>
 
             <Grid className="salecard-info-item">
-              <Stack direction="row" alignItems="center" justifyContent="center" gap={1} className="salecard-info-stack">
+              <Stack
+                direction="row"
+                alignItems="center"
+                justifyContent="center"
+                gap={1}
+                className="salecard-info-stack"
+              >
                 <Typography className="salecard-info-label" variant="body2">
                   Liquidity
                 </Typography>
@@ -200,7 +218,13 @@ export const SaleCard: React.FC<SaleCardProps> = ({
               </Stack>
             </Grid>
             <Grid className="salecard-info-item">
-              <Stack direction="row" alignItems="center" justifyContent="center" gap={1} className="salecard-info-stack">
+              <Stack
+                direction="row"
+                alignItems="center"
+                justifyContent="center"
+                gap={1}
+                className="salecard-info-stack"
+              >
                 <Typography className="salecard-info-label" variant="body2">
                   Lock
                 </Typography>
@@ -226,7 +250,12 @@ export const SaleCard: React.FC<SaleCardProps> = ({
                 rel="noopener noreferrer"
                 className="salecard-icon"
               >
-                <Icon icon="mdi:earth" width="20" height="20" className="salecard-icon" />
+                <Icon
+                  icon="mdi:earth"
+                  width="20"
+                  height="20"
+                  className="salecard-icon"
+                />
               </IconButton>
               <IconButton
                 size="small"
@@ -235,7 +264,12 @@ export const SaleCard: React.FC<SaleCardProps> = ({
                 rel="noopener noreferrer"
                 className="salecard-icon"
               >
-                <Icon icon="cib:telegram-plane" width="20" height="20" className="salecard-icon" />
+                <Icon
+                  icon="cib:telegram-plane"
+                  width="20"
+                  height="20"
+                  className="salecard-icon"
+                />
               </IconButton>
               <IconButton
                 size="small"
@@ -244,7 +278,12 @@ export const SaleCard: React.FC<SaleCardProps> = ({
                 rel="noopener noreferrer"
                 className="salecard-icon"
               >
-                <Icon icon="mdi:twitter" width="20" height="20" className="salecard-icon" />
+                <Icon
+                  icon="mdi:twitter"
+                  width="20"
+                  height="20"
+                  className="salecard-icon"
+                />
               </IconButton>
             </Stack>
 
@@ -257,18 +296,32 @@ export const SaleCard: React.FC<SaleCardProps> = ({
             <Stack direction="row" spacing={1} className="salecard-icon-group">
               <IconButton size="small" className="salecard-icon">
                 <Badge badgeContent={0} color="primary">
-                  <Icon icon="eva:message-circle-outline" width="20" height="20" className="salecard-icon" />
+                  <Icon
+                    icon="eva:message-circle-outline"
+                    width="20"
+                    height="20"
+                    className="salecard-icon"
+                  />
                 </Badge>
               </IconButton>
               <IconButton size="small" disabled className="salecard-icon">
-                <Icon icon="eva:bell-outline" width="20" height="20" className="salecard-icon" />
+                <Icon
+                  icon="eva:bell-outline"
+                  width="20"
+                  height="20"
+                  className="salecard-icon"
+                />
               </IconButton>
               <IconButton size="small" className="salecard-icon">
-                <Icon icon="eva:heart-outline" width="20" height="20" className="salecard-icon" />
+                <Icon
+                  icon="eva:heart-outline"
+                  width="20"
+                  height="20"
+                  className="salecard-icon"
+                />
               </IconButton>
             </Stack>
           </Stack>
-
         </CardContent>
       </Card>
     </Box>

@@ -1,5 +1,5 @@
 import { Stack, Button, FormLabel } from "@mui/material";
-import './DrawerFilter.css'
+import "./DrawerFilter.css";
 
 type DrawerFilterLabelRowProps = {
   label: string;
@@ -12,7 +12,7 @@ export function DrawerFilterLabelRow({
   label,
   onUncheckAll,
   buttonText = "Uncheck All",
-  showButton = true, 
+  showButton = true,
 }: DrawerFilterLabelRowProps) {
   return (
     <Stack

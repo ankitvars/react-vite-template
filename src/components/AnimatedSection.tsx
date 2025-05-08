@@ -1,17 +1,17 @@
-import { Avatar, Box } from '@mui/material';
-import React from 'react';
-import trendingIcon from '../assets/icons/trending.svg';
-import AnimatedButton from './AnimatedButton';
-import TrendingMarquee from './TrendingMarquee';
+import { Avatar, Box } from "@mui/material";
+import React from "react";
+import trendingIcon from "../assets/icons/trending.svg";
+import AnimatedButton from "./AnimatedButton";
+import TrendingMarquee from "./TrendingMarquee";
 
 const AnimatedSection: React.FC = () => {
   return (
     <Box
       sx={{
-        display: 'flex',
-        alignItems: 'center',
-        padding: '10px 20px',
-        overflow: 'hidden',
+        display: "flex",
+        alignItems: "center",
+        padding: "10px 20px",
+        overflow: "hidden",
       }}
     >
       <AnimatedButton />
@@ -21,12 +21,12 @@ const AnimatedSection: React.FC = () => {
           mx: 2,
           width: 44,
           height: 44,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          borderRadius: '24px',
-          cursor: 'pointer',
-          boxSizing: 'border-box',
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: "24px",
+          cursor: "pointer",
+          boxSizing: "border-box",
           "&:hover": {
             bgcolor: "rgba(34, 96, 119, 0.1)",
             backdropFilter: "blur(10px)",

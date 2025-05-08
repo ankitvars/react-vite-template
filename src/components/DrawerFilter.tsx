@@ -27,7 +27,6 @@ type DrawerProps = {
 };
 
 export default function TemporaryDrawer({ toggleDrawer, open }: DrawerProps) {
-
   const handleReset = () => {
     // Reset logic here
   };

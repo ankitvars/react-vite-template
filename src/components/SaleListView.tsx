@@ -1,4 +1,12 @@
-import { Stack, Paper, Badge, Avatar, Typography, LinearProgress, Box } from "@mui/material";
+import {
+  Stack,
+  Paper,
+  Badge,
+  Avatar,
+  Typography,
+  LinearProgress,
+  Box,
+} from "@mui/material";
 import { SaleCardProps } from "./SaleCard";
 import "./SaleListView.css";
 
@@ -21,7 +29,12 @@ export const SaleListView: React.FC<SaleListViewProps> = ({ data }) => (
       <Paper key={idx} elevation={0} className="listPaper">
         <Stack direction="row" className="listRow">
           {/* Project */}
-          <Stack direction="row" gap={2} alignItems="center" className="listProject">
+          <Stack
+            direction="row"
+            gap={2}
+            alignItems="center"
+            className="listProject"
+          >
             <Badge
               overlap="circular"
               anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
@@ -46,7 +59,12 @@ export const SaleListView: React.FC<SaleListViewProps> = ({ data }) => (
             </Typography>
           </Stack>
           {/* Blockchain */}
-          <Stack direction="row" gap={1} alignItems="center" className="listChain">
+          <Stack
+            direction="row"
+            gap={1}
+            alignItems="center"
+            className="listChain"
+          >
             <Box
               component="img"
               src={"/chains/sol.png"}
@@ -62,7 +80,12 @@ export const SaleListView: React.FC<SaleListViewProps> = ({ data }) => (
             <Typography variant="body1">{sale.tagText}</Typography>
           </Stack>
           {/* Sale Status */}
-          <Stack direction="row" gap={1} alignItems="center" className="listStatus">
+          <Stack
+            direction="row"
+            gap={1}
+            alignItems="center"
+            className="listStatus"
+          >
             <Typography variant="body2">{sale.status}</Typography>
             <Typography variant="body1">
               <time dateTime={sale.timeRemaining}>{sale.timeRemaining}</time>
@@ -75,7 +98,11 @@ export const SaleListView: React.FC<SaleListViewProps> = ({ data }) => (
               value={Math.min(sale.progressPercent, 100)}
               sx={{ height: 8, borderRadius: 4, mb: 1 }}
             />
-            <Stack direction="row" justifyContent="space-between" alignItems="center">
+            <Stack
+              direction="row"
+              justifyContent="space-between"
+              alignItems="center"
+            >
               <Typography variant="body2">
                 {sale.progressValueSol} <small>SOL</small>
               </Typography>

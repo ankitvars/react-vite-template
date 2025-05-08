@@ -1,6 +1,6 @@
 // src/components/ErrorBoundary.tsx
 
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import React, { Component, ErrorInfo, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
@@ -31,7 +31,8 @@ class ErrorBoundary extends Component<Props, State> {
           <div>
             <h1 className="text-3xl font-bold mb-2">Something went wrong 😞</h1>
             <p className="text-sm mb-4">
-              An unexpected error has occurred. Please try refreshing the page or come back later.
+              An unexpected error has occurred. Please try refreshing the page
+              or come back later.
             </p>
             <pre className="bg-black/40 p-4 rounded text-xs overflow-auto max-w-md mx-auto">
               {this.state.error?.message}

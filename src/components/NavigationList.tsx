@@ -110,7 +110,9 @@ const NavigationList: React.FC = () => {
                   },
                 }}
               >
-                <ListItemIcon sx={{ minWidth: 0, mr: 1, color: "rgb(99, 115, 129)" }}>
+                <ListItemIcon
+                  sx={{ minWidth: 0, mr: 1, color: "rgb(99, 115, 129)" }}
+                >
                   {item.icon}
                 </ListItemIcon>
                 <ListItemText
@@ -119,9 +121,9 @@ const NavigationList: React.FC = () => {
                 />
               </ListItemButton>
             ))}
-          </List >
+          </List>
         ))}
-      </Box >
+      </Box>
       <Divider />
       <Box sx={{ p: 1 }}>
         {/* Video will be show here */}

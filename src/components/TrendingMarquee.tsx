@@ -1,19 +1,19 @@
-import React from 'react';
-import Marquee from 'react-fast-marquee';
-import { Box, Typography, Avatar } from '@mui/material';
-import mooniIcon from '../assets/logo/GemPoints.svg'; // Ensure the path is correct
+import React from "react";
+import Marquee from "react-fast-marquee";
+import { Box, Typography, Avatar } from "@mui/material";
+import mooniIcon from "../assets/logo/GemPoints.svg"; // Ensure the path is correct
 
 const trendingCoins = [
-  { id: 1, name: 'GPR', icon: mooniIcon },
-  { id: 2, name: 'MOONI', icon: mooniIcon },
-  { id: 3, name: 'PLPR', icon: mooniIcon },
-  { id: 4, name: 'TBN', icon: mooniIcon },
-  { id: 5, name: 'PEPECAR', icon: mooniIcon },
-  { id: 6, name: 'KWN', icon: mooniIcon },
-  { id: 7, name: 'GCT', icon: mooniIcon },
-  { id: 8, name: 'TIGRO', icon: mooniIcon },
-  { id: 9, name: 'DEEPGT', icon: mooniIcon },
-  { id: 10, name: 'KWN', icon: mooniIcon },
+  { id: 1, name: "GPR", icon: mooniIcon },
+  { id: 2, name: "MOONI", icon: mooniIcon },
+  { id: 3, name: "PLPR", icon: mooniIcon },
+  { id: 4, name: "TBN", icon: mooniIcon },
+  { id: 5, name: "PEPECAR", icon: mooniIcon },
+  { id: 6, name: "KWN", icon: mooniIcon },
+  { id: 7, name: "GCT", icon: mooniIcon },
+  { id: 8, name: "TIGRO", icon: mooniIcon },
+  { id: 9, name: "DEEPGT", icon: mooniIcon },
+  { id: 10, name: "KWN", icon: mooniIcon },
 ];
 
 // Duplicate the coins array to create a continuous loop effect.
@@ -40,8 +40,8 @@ const TrendingMarquee: React.FC = () => {
             mx: 2,
             cursor: "pointer",
             bgcolor: "rgba(121, 134, 134, 0.1)",
-            borderRadius: '10px',
-            py: 0.5
+            borderRadius: "10px",
+            py: 0.5,
           }}
         >
           <Box

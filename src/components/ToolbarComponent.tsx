@@ -13,7 +13,7 @@ import {
   Tabs,
   TextField,
   ToggleButton,
-  ToggleButtonGroup
+  ToggleButtonGroup,
 } from "@mui/material";
 import { useState } from "react";
 import TemporaryDrawer from "./DrawerFilter";
@@ -23,9 +23,14 @@ type ToolBarComponentProps = {
   setView: (view: "grid" | "list") => void;
   tabIndex: number;
   setTabIndex: (index: number) => void;
-}
+};
 
-const ToolbarComponent = ({ tabIndex, setTabIndex, view, setView }: ToolBarComponentProps) => {
+const ToolbarComponent = ({
+  tabIndex,
+  setTabIndex,
+  view,
+  setView,
+}: ToolBarComponentProps) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [open, setOpen] = useState(false);
 
@@ -34,7 +39,7 @@ const ToolbarComponent = ({ tabIndex, setTabIndex, view, setView }: ToolBarCompo
   };
   const handleViewChange = (
     _event: React.MouseEvent<HTMLElement>,
-    nextView: "grid" | "list" | null
+    nextView: "grid" | "list" | null,
   ) => {
     if (nextView !== null) {
       setView(nextView);
@@ -242,7 +247,6 @@ const ToolbarComponent = ({ tabIndex, setTabIndex, view, setView }: ToolBarCompo
           Filters
         </Button>
       </Stack>
-
 
       {open && <TemporaryDrawer open={open} toggleDrawer={toggleDrawer} />}
     </>

@@ -22,10 +22,10 @@ const VIEW_MODES = {
 
 export const SaleList: React.FC<SaleListProps> = ({
   data,
-  fetchMoreData = () => { },
+  fetchMoreData = () => {},
   hasMore = false,
   loadingMore = false,
-  view
+  view,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -45,7 +45,10 @@ export const SaleList: React.FC<SaleListProps> = ({
   ));
 
   const loadingMoreSkeletons = Array.from({ length: 3 }).map((_, idx) => (
-    <Box key={`loading-more-${idx}`} sx={isGridView ? gridItemStyle : listItemStyle}>
+    <Box
+      key={`loading-more-${idx}`}
+      sx={isGridView ? gridItemStyle : listItemStyle}
+    >
       <SkeletonSaleCard />
     </Box>
   ));
@@ -57,7 +60,7 @@ export const SaleList: React.FC<SaleListProps> = ({
           <SaleCard {...sale} />
         </Box>
       )),
-    [data, isGridView]
+    [data, isGridView],
   );
 
   if (!isLoading && !data?.length) {

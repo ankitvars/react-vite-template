@@ -1,16 +1,16 @@
-import React from 'react';
-import LeftSideComponent from '../components/LeftSideComponent';
-import RightSideComponent from '../components/RightSideComponent';
-import { Divider } from '@mui/material';
+import React from "react";
+import LeftSideComponent from "../components/LeftSideComponent";
+import RightSideComponent from "../components/RightSideComponent";
+import { Divider } from "@mui/material";
 
 const LandingPage: React.FC = () => {
   return (
     <div
       style={{
-        display: 'flex',
-        flexDirection: 'row',
-        backgroundColor: 'rgb(18,24,31)',
-        color: '#fff',
+        display: "flex",
+        flexDirection: "row",
+        backgroundColor: "rgb(18,24,31)",
+        color: "#fff",
       }}
     >
       {/* Left side navigation */}

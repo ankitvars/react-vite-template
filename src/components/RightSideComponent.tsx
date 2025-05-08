@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import salesData from "../constants/sampleData.json";
-import AnimatedSection from './AnimatedSection';
-import Header from './Header';
+import AnimatedSection from "./AnimatedSection";
+import Header from "./Header";
 import { SaleList } from "./SaleList";
-import ToolbarComponent from './ToolbarComponent';
-import './RightSideComponent.css';
-import { Box, Container } from '@mui/material';
+import ToolbarComponent from "./ToolbarComponent";
+import "./RightSideComponent.css";
+import { Box, Container } from "@mui/material";
 
 const PAGE_SIZE = 25;
 interface SaleItem {
@@ -52,7 +52,7 @@ const RightSideComponent: React.FC = () => {
   };
 
   const hasMore = visibleCount < currentData.length;
-  console.log(currentData[0])
+  console.log(currentData[0]);
   const visibleData = currentData
     .slice(0, visibleCount)
 
@@ -66,7 +66,12 @@ const RightSideComponent: React.FC = () => {
       <Container maxWidth={false} className="rightSideContainer">
         <Header />
         <AnimatedSection />
-        <ToolbarComponent view={view} setView={setView} tabIndex={tabIndex} setTabIndex={setTabIndex} />
+        <ToolbarComponent
+          view={view}
+          setView={setView}
+          tabIndex={tabIndex}
+          setTabIndex={setTabIndex}
+        />
         <SaleList
           data={visibleData}
           fetchMoreData={fetchMoreData}

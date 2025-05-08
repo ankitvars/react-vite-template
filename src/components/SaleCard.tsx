@@ -1,27 +1,23 @@
+import { Icon } from "@iconify/react";
 import AddIcon from "@mui/icons-material/Add";
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-import ClearIcon from "@mui/icons-material/Clear";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import PublicIcon from "@mui/icons-material/Public";
-import TelegramIcon from "@mui/icons-material/Telegram";
 import {
+  Badge,
   Box,
   Card,
   CardContent,
   CardMedia,
   Chip,
+  Divider,
   IconButton,
   LinearProgress,
   Stack,
-  Typography
+  Typography,
 } from "@mui/material";
-import React from "react";
-import topIcon from "../assets/cardlogo.svg";
-import cardImage from "../assets/images/banner1.png";
-import centerIcon from "../assets/images/cardtitle.webp";
+import topIcon from "../assets/promotions/2.svg";
+import centerIcon from "../assets/chains/sol.png";
 import "./SaleCard.css";
+import Grid from '@mui/material/Grid';
 
 export interface SaleCardProps {
   topImage: string;
@@ -65,7 +61,7 @@ export const SaleCard: React.FC<SaleCardProps> = ({
             <Box className="salecard-topicon-triangle" />
           </Stack>
         </Stack>
-        
+
         <svg
           className="salecard-pushpin"
           focusable="false"
@@ -84,7 +80,12 @@ export const SaleCard: React.FC<SaleCardProps> = ({
           </Typography>
         </Stack>
 
-        <CardMedia component="img" src={cardImage} alt="" className="salecard-media" />
+        <CardMedia
+          component="img"
+          src={topImage}
+          alt=""
+          className="salecard-media"
+        />
 
         <CardContent className="salecard-content">
           <Stack direction="row" alignItems="center" spacing={1} mb={1}>
@@ -100,10 +101,20 @@ export const SaleCard: React.FC<SaleCardProps> = ({
               {timeRemaining}
             </Typography>
             <Box flexGrow={1} />
-            <Chip label={tagText} size="small" variant="outlined" className="salecard-tag" />
+            <Chip
+              label={tagText}
+              size="small"
+              variant="outlined"
+              className="salecard-tag"
+            />
           </Stack>
           <Stack direction="row" alignItems="center" spacing={1} mb={2.5}>
-            <Box component="img" src={centerIcon} alt="" className="salecard-centericon" />
+            <Box
+              component="img"
+              src={centerIcon}
+              alt=""
+              className="salecard-centericon"
+            />
             <Box className="salecard-titlebox">
               <Typography variant="subtitle2" className="salecard-title">
                 {title}
@@ -134,71 +145,130 @@ export const SaleCard: React.FC<SaleCardProps> = ({
               {progressPercent.toFixed(2)}%
             </Typography>
           </Stack>
-          <Stack direction="row" justifyContent="space-around" mb={1}>
-            <Box>
-              <Stack direction="row" spacing={1} alignItems="center">
-                <Typography variant="body2" className="salecard-label">
+
+          {/* Softcap and Hardcap section */}
+          <Grid container className="salecard-info-grid">
+            <Grid className="salecard-info-item">
+              <Stack direction="row" alignItems="center" justifyContent="center" gap={1} className="salecard-info-stack">
+                <Typography className="salecard-info-label" variant="body2">
                   Softcap
                 </Typography>
-                <Typography variant="caption" className="salecard-value">
+                <Typography className="salecard-info-value" variant="body2">
                   {softcap}
                 </Typography>
               </Stack>
-              <Stack direction="row" spacing={1} alignItems="center">
-                <Typography variant="body2" className="salecard-label">
+            </Grid>
+            <Grid className="salecard-info-item">
+              <Stack direction="row" alignItems="center" justifyContent="center" gap={1} className="salecard-info-stack">
+                <Typography className="salecard-info-label" variant="body2">
+                  Hardcap
+                </Typography>
+                {hardcap === "∞" ? (
+                  <svg
+                    style={{ width: 20, height: 20, color: "rgb(12, 175, 96)" }}
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M18.6 6.62c-1.44 0-2.8.56-3.77 1.53L12 10.66 10.48 12h.01L7.8 14.39c-.64.64-1.49.99-2.4.99-1.87 0-3.39-1.51-3.39-3.38S3.53 8.62 5.4 8.62c.91 0 1.76.35 2.44 1.03l1.13 1 1.51-1.34L9.22 8.2C8.2 7.18 6.84 6.62 5.4 6.62 2.42 6.62 0 9.04 0 12s2.42 5.38 5.4 5.38c1.44 0 2.8-.56 3.77-1.53l2.83-2.5.01.01L13.52 12h-.01l2.69-2.39c.64-.64 1.49-.99 2.4-.99 1.87 0 3.39 1.51 3.39 3.38s-1.52 3.38-3.39 3.38c-.9 0-1.76-.35-2.44-1.03l-1.14-1.01-1.51 1.34 1.27 1.12c1.02 1.01 2.37 1.57 3.82 1.57 2.98 0 5.4-2.41 5.4-5.38s-2.42-5.37-5.4-5.37"
+                    />
+                  </svg>
+                ) : (
+                  <Typography className="salecard-info-value" variant="body2">
+                    {hardcap}
+                  </Typography>
+                )}
+              </Stack>
+            </Grid>
+
+            {/* Divider rows */}
+            <Grid className="salecard-info-item">
+              <Divider className="salecard-info-divider" />
+            </Grid>
+            <Grid className="salecard-info-item">
+              <Divider className="salecard-info-divider" />
+            </Grid>
+
+            <Grid className="salecard-info-item">
+              <Stack direction="row" alignItems="center" justifyContent="center" gap={1} className="salecard-info-stack">
+                <Typography className="salecard-info-label" variant="body2">
                   Liquidity
                 </Typography>
-                <Typography variant="caption" className="salecard-value">
+                <Typography className="salecard-info-value" variant="body2">
                   {liquidity}
                 </Typography>
               </Stack>
-            </Box>
-            <Box textAlign="right">
-              <Stack direction="row" spacing={1} alignItems="center">
-                <Typography variant="body2" className="salecard-label">
-                  Hardcap
-                </Typography>
-                <Typography variant="caption" className="salecard-value">
-                  {hardcap}
-                </Typography>
-              </Stack>
-              <Stack direction="row" spacing={1} alignItems="center">
-                <Typography variant="body2" className="salecard-label">
+            </Grid>
+            <Grid className="salecard-info-item">
+              <Stack direction="row" alignItems="center" justifyContent="center" gap={1} className="salecard-info-stack">
+                <Typography className="salecard-info-label" variant="body2">
                   Lock
                 </Typography>
-                <Typography variant="caption" className="salecard-value">
+                <Typography className="salecard-info-value" variant="body2">
                   {lock}
                 </Typography>
               </Stack>
-            </Box>
-          </Stack>
-          <Stack direction="row" alignItems="center" justifyContent="space-between">
-            <Stack direction="row" spacing={1}>
-              <IconButton size="small" className="salecard-iconbtn">
-                <PublicIcon fontSize="small" />
+            </Grid>
+          </Grid>
+
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="space-between"
+            className="salecard-icon-row"
+          >
+            {/* Left icon group */}
+            <Stack direction="row" spacing={1} className="salecard-icon-group">
+              <IconButton
+                size="small"
+                component="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="salecard-icon"
+              >
+                <Icon icon="mdi:earth" width="20" height="20" className="salecard-icon" />
               </IconButton>
-              <IconButton size="small" className="salecard-iconbtn">
-                <TelegramIcon fontSize="small" />
+              <IconButton
+                size="small"
+                component="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="salecard-icon"
+              >
+                <Icon icon="cib:telegram-plane" width="20" height="20" className="salecard-icon" />
               </IconButton>
-              <IconButton size="small" className="salecard-iconbtn">
-                <ClearIcon fontSize="small" />
+              <IconButton
+                size="small"
+                component="a"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="salecard-icon"
+              >
+                <Icon icon="mdi:twitter" width="20" height="20" className="salecard-icon" />
               </IconButton>
             </Stack>
-            <IconButton size="small" className="salecard-iconbtn">
-              <AddIcon fontSize="small" />
+
+            {/* Main plus button */}
+            <IconButton size="medium" className="salecard-icon-main">
+              <AddIcon />
             </IconButton>
-            <Stack direction="row" spacing={1}>
-              <IconButton size="small" className="salecard-iconbtn">
-                <ChatBubbleOutlineIcon fontSize="small" />
+
+            {/* Right icon group */}
+            <Stack direction="row" spacing={1} className="salecard-icon-group">
+              <IconButton size="small" className="salecard-icon">
+                <Badge badgeContent={0} color="primary">
+                  <Icon icon="eva:message-circle-outline" width="20" height="20" className="salecard-icon" />
+                </Badge>
               </IconButton>
-              <IconButton size="small" className="salecard-iconbtn">
-                <NotificationsNoneIcon fontSize="small" />
+              <IconButton size="small" disabled className="salecard-icon">
+                <Icon icon="eva:bell-outline" width="20" height="20" className="salecard-icon" />
               </IconButton>
-              <IconButton size="small" className="salecard-iconbtn">
-                <FavoriteBorderIcon fontSize="small" />
+              <IconButton size="small" className="salecard-icon">
+                <Icon icon="eva:heart-outline" width="20" height="20" className="salecard-icon" />
               </IconButton>
             </Stack>
           </Stack>
+
         </CardContent>
       </Card>
     </Box>

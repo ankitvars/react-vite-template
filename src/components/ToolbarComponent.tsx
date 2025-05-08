@@ -15,18 +15,19 @@ import {
   ToggleButton,
   ToggleButtonGroup
 } from "@mui/material";
-import React from "react";
+import { useState } from "react";
 import TemporaryDrawer from "./DrawerFilter";
 
 type ToolBarComponentProps = {
+  view: "grid" | "list";
+  setView: (view: "grid" | "list") => void;
   tabIndex: number;
   setTabIndex: (index: number) => void;
 }
 
-const ToolbarComponent = ({ tabIndex, setTabIndex }: ToolBarComponentProps) => {
-  const [view, setView] = React.useState<"grid" | "list">("grid");
-  const [searchTerm, setSearchTerm] = React.useState("");
-  const [open, setOpen] = React.useState(false);
+const ToolbarComponent = ({ tabIndex, setTabIndex, view, setView }: ToolBarComponentProps) => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [open, setOpen] = useState(false);
 
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen);

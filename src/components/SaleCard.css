@@ -32,6 +32,7 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 364px;
+  cursor: pointer;
 }
 .salecard-card:hover {
   transform: translateY(-8px);
@@ -88,10 +89,12 @@
   font-size: 1.5rem;
   height: 30px;
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: -15px;
+  right: -25px;
   transform: rotate(45deg);
-  color: rgb(99, 115, 129);
+  color: rgb(99, 115, 129) !important;
+  z-index: 99;
+  background-color: rgb(255, 255, 255);
   transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .MuiStack-root.salecard-ribbon-stack {
@@ -125,23 +128,6 @@
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
 }
-/* .salecard-content {
-  padding-top: 16px !important;
-  padding-bottom: 16px !important;
-  padding-left: 16px !important;
-  padding-right: 16px !important;
-  position: relative;
-  z-index: 1;
-  background-color: rgb(22, 29, 39) !important;
-  color: #fff !important;
-  background-image: none !important;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 2px 0px,
-    rgba(0, 0, 0, 0.12) 0px 12px 24px -4px !important;
-  width: 100%;
-  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-  border-radius: 16px !important;
-} */
 .MuiCard-root.salecard-content {
   display: flex;
   flex-direction: column;
@@ -162,9 +148,9 @@
   text-transform: uppercase;
 }
 @media (min-width: 0px) {
-    .salecard-status {
-        font-size: 0.6875rem;
-    }
+  .salecard-status {
+    font-size: 0.6875rem;
+  }
 }
 .salecard-timer {
   color: #fff !important;
@@ -232,7 +218,11 @@
 }
 
 .salecard-progress .MuiLinearProgress-bar1Buffer {
-  background: linear-gradient(90deg, rgba(22, 29, 39, 0.7) 0%, rgb(12, 175, 96) 33%);
+  background: linear-gradient(
+    90deg,
+    rgba(22, 29, 39, 0.7) 0%,
+    rgb(12, 175, 96) 33%
+  );
   overflow: hidden;
 }
 
@@ -241,7 +231,7 @@
 }
 
 .salecard-progress .MuiLinearProgress-bar {
-   background-color: rgb(6, 87, 48);
+  background-color: rgb(6, 87, 48);
   border-radius: 16px !important;
 }
 
@@ -258,4 +248,133 @@
 }
 .salecard-iconbtn {
   color: rgb(121, 134, 134) !important;
+}
+
+.salecard-icon-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  z-index: 2;
+}
+
+.salecard-icon-group {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  width: 120px;
+}
+
+.salecard-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: 0px;
+  border: 0px;
+  margin: 0px;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-decoration: none;
+  text-align: center;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  overflow: visible;
+  color: rgb(145, 158, 171);
+  font-size: 1.125rem;
+  padding: 0px;
+  z-index: 2;
+  transition: 0.3s;
+}
+
+.MuiIconButton-root.salecard-icon-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-align: center;
+  font-size: 1.5rem;
+  color: rgb(145, 158, 171);
+  outline: 0px;
+  border-width: 0px;
+  margin: 0px;
+  text-decoration: none;
+  flex: 0 0 auto;
+  padding: 8px;
+  border-radius: 50%;
+  overflow: visible;
+  transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  height: 30px;
+  width: 30px;
+}
+
+/* Container for the grid */
+.MuiGrid-root.salecard-info-grid {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: wrap;
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* Each grid item */
+.MuiGrid-root.salecard-info-item {
+  box-sizing: border-box;
+  margin: 0px;
+  flex-direction: row;
+  flex-basis: 50%;
+  flex-grow: 0;
+  max-width: 50%;
+  padding-top: 4px;
+}
+
+/* Stack for label/value */
+.MuiStack-root.salecard-info-stack {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Label text */
+.MuiTypography-root.salecard-info-label {
+  margin: 0px;
+  line-height: 1.57143;
+  font-size: 0.75rem;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* Value text */
+.MuiTypography-root.salecard-info-value {
+  margin: 0px;
+  line-height: 1.57143;
+  font-size: 0.75rem;
+  font-family: "Poppins", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: rgb(12, 175, 96);
+}
+
+.MuiDivider-root.salecard-info-divider {
+  margin: 0px 8px;
+  flex-shrink: 0;
+  border-width: 0px 0px thin;
+  border-style: solid;
+  border-color: rgba(145, 158, 171, 0.24);
 }

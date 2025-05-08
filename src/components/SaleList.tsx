@@ -1,11 +1,18 @@
-import React from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Stack, Typography, Box } from "@mui/material";
+import InfiniteScroll from "react-infinite-scroll-component";
 import { SaleCard, SaleCardProps } from "./SaleCard";
+import { SkeletonSaleCard } from "./SkeletonSaleCard";
+import { SaleListView } from "./SaleListView";
 
 type ViewMode = "grid" | "list";
 
 interface SaleListProps {
   data: SaleCardProps[];
+  fetchMoreData?: () => void;
+  hasMore?: boolean;
+  loadingMore?: boolean;
+  view?: ViewMode;
 }
 
 const VIEW_MODES = {
@@ -13,35 +20,37 @@ const VIEW_MODES = {
   LIST: "list",
 } as const;
 
-export const SaleList: React.FC<SaleListProps> = ({ data }) => {
-  const [view, setView] = React.useState<ViewMode>(VIEW_MODES.GRID);
+export const SaleList: React.FC<SaleListProps> = ({
+  data,
+  fetchMoreData = () => { },
+  hasMore = false,
+  loadingMore = false,
+  view
+}) => {
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Load persisted view mode
-  React.useEffect(() => {
-    const storedView = sessionStorage.getItem("saleView") as ViewMode;
-    if (storedView === VIEW_MODES.LIST || storedView === VIEW_MODES.GRID) {
-      setView(storedView);
+  useEffect(() => {
+    if (data && data.length > 0) {
+      const timeout = setTimeout(() => setIsLoading(false), 800);
+      return () => clearTimeout(timeout);
     }
-  }, []);
-
-  // Persist view mode changes
-  React.useEffect(() => {
-    sessionStorage.setItem("saleView", view);
-  }, [view]);
+  }, [data]);
 
   const isGridView = view === VIEW_MODES.GRID;
 
-  if (!data?.length) {
-    return (
-      <Box sx={{ py: 4, textAlign: "center" }}>
-        <Typography variant="h6" color="text.secondary">
-          No presales found.
-        </Typography>
-      </Box>
-    );
-  }
+  const skeletons = Array.from({ length: 6 }).map((_, idx) => (
+    <Box key={idx} sx={isGridView ? gridItemStyle : listItemStyle}>
+      <SkeletonSaleCard />
+    </Box>
+  ));
 
-  const renderedCards = React.useMemo(
+  const loadingMoreSkeletons = Array.from({ length: 3 }).map((_, idx) => (
+    <Box key={`loading-more-${idx}`} sx={isGridView ? gridItemStyle : listItemStyle}>
+      <SkeletonSaleCard />
+    </Box>
+  ));
+
+  const renderedCards = useMemo(
     () =>
       data.map((sale, index) => (
         <Box key={index} sx={isGridView ? gridItemStyle : listItemStyle}>
@@ -51,15 +60,54 @@ export const SaleList: React.FC<SaleListProps> = ({ data }) => {
     [data, isGridView]
   );
 
-  return isGridView ? (
-    <Box sx={gridContainerStyle}>{renderedCards}
-    </Box>
-  ) : (
-    <Stack spacing={2} sx={{ px: 2, py: 1 }}>{renderedCards}</Stack>
+  if (!isLoading && !data?.length) {
+    return (
+      <Box sx={{ py: 4, textAlign: "center" }}>
+        <Typography variant="h6" color="text.secondary">
+          No presales found.
+        </Typography>
+      </Box>
+    );
+  }
+
+  return (
+    <div className="infinite-scroll-component__outerdiv">
+      {isLoading ? (
+        isGridView ? (
+          <Box sx={gridContainerStyle}>{skeletons}</Box>
+        ) : (
+          <Stack spacing={2} sx={{ px: 2, py: 1 }}>
+            {skeletons}
+          </Stack>
+        )
+      ) : (
+        <InfiniteScroll
+          dataLength={data.length}
+          next={fetchMoreData}
+          hasMore={hasMore}
+          loader={
+            loadingMore ? (
+              isGridView ? (
+                <Box sx={gridContainerStyle}>{loadingMoreSkeletons}</Box>
+              ) : (
+                <Stack spacing={2} sx={{ px: 2, py: 1 }}>
+                  {loadingMoreSkeletons}
+                </Stack>
+              )
+            ) : null
+          }
+        >
+          {isGridView ? (
+            <Box sx={gridContainerStyle}>{renderedCards}</Box>
+          ) : (
+            <SaleListView data={data} />
+          )}
+        </InfiniteScroll>
+      )}
+    </div>
   );
 };
 
-// Styles extracted for clarity
 const gridContainerStyle = {
   display: "flex",
   flexWrap: "wrap",

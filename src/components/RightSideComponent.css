@@ -1,0 +1,29 @@
+.rightSideContainer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  display: block;
+  padding-top: 0px;
+  flex: 1;
+  overflow-y: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  overflow-x: hidden;
+  border-left: 1px solid rgb(121, 134, 134);
+}
+
+@media (min-width: 1280px) {
+  .rightSideContainer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.rightSideComponent {
+  -webkit-box-flex: 1;
+  flex-grow: 1;
+  /* padding-top: 102px; */
+  padding-bottom: 102px;
+  width: fit-content;
+}

@@ -1,5 +1,5 @@
 import { Avatar, Button as MUIButton } from '@mui/material';
-import mooniIcon from '../assets/logo/gpr.webp';
+import mooniIcon from '../assets/chains/abey.png';
 import { motion, useAnimationFrame, useMotionTemplate, useMotionValue, useTransform } from 'motion/react';
 import { useRef } from 'react';
 
@@ -46,7 +46,7 @@ const MovingBorder = ({
   duration?: number;
   rx?: string;
   ry?: string;
-  [key: string]: any;
+  [key: string]: string | number | React.ReactNode | undefined; 
 }) => {
   const pathRef = useRef<SVGRectElement | null>(null);
   const progress = useMotionValue<number>(0);
@@ -59,8 +59,8 @@ const MovingBorder = ({
     }
   });
 
-  const x = useTransform(progress, (val) => pathRef.current?.getPointAtLength?.(val).x);
-  const y = useTransform(progress, (val) => pathRef.current?.getPointAtLength?.(val).y);
+  const x = useTransform(progress, (val: number) => pathRef.current?.getPointAtLength?.(val).x);
+  const y = useTransform(progress, (val: number) => pathRef.current?.getPointAtLength?.(val).y);
 
   const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
 

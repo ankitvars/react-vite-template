@@ -310,7 +310,11 @@ img {
 }
 
 .custom-progress-bar .MuiLinearProgress-bar1Buffer {
-  background: linear-gradient(90deg, rgba(22, 29, 39, 0.7) 0%, rgb(12, 175, 96) 33%);
+  background: linear-gradient(
+    90deg,
+    rgba(22, 29, 39, 0.7) 0%,
+    rgb(12, 175, 96) 33%
+  );
   overflow: hidden;
 }
 
@@ -327,7 +331,11 @@ img {
   margin-top: 0px;
   height: 100%;
   width: 100%;
-  background-image: radial-gradient(rgb(6, 87, 48) 0%, rgb(6, 87, 48) 16%, transparent 42%);
+  background-image: radial-gradient(
+    rgb(6, 87, 48) 0%,
+    rgb(6, 87, 48) 16%,
+    transparent 42%
+  );
   background-size: 10px 10px;
   background-position: 0px -23px;
   animation: custom-dashed-anim 3s linear infinite;

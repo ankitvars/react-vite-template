@@ -23,7 +23,7 @@ const VIEW_MODES = {
 
 export const SaleList: React.FC<SaleListProps> = ({
   data,
-  fetchMoreData = () => { },
+  fetchMoreData = () => {},
   hasMore = false,
   loadingMore = false,
   view,

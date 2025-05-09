@@ -1,4 +1,4 @@
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import React, { Component, ErrorInfo, ReactNode } from "react";
 
 interface ErrorBoundaryProps {
   children: ReactNode;
@@ -12,12 +12,15 @@ interface ErrorBoundaryState {
   errorInfo?: ErrorInfo;
 }
 
-export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+export default class ErrorBoundary extends Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
   state: ErrorBoundaryState = { hasError: false };
 
   static defaultProps = {
-    title: 'We hit a snag',
-    message: 'Something unexpected occurred. Our engineers have been notified.',
+    title: "We hit a snag",
+    message: "Something unexpected occurred. Our engineers have been notified.",
   };
 
   static getDerivedStateFromError(error: Error): ErrorBoundaryState {
@@ -25,20 +28,27 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error('ErrorBoundary caught:', error, errorInfo);
+    console.error("ErrorBoundary caught:", error, errorInfo);
     this.setState({ errorInfo });
   }
 
-  handleRetry = () => this.setState({ hasError: false, error: undefined, errorInfo: undefined });
-  handleHome = () => window.location.assign('/');
+  handleRetry = () =>
+    this.setState({ hasError: false, error: undefined, errorInfo: undefined });
+  handleHome = () => window.location.assign("/");
 
   render() {
     if (!this.state.hasError) return this.props.children;
 
     const { title, message } = this.props;
     return (
-      <div className="fixed inset-0 flex items-center justify-center p-4" style={{ backgroundColor: 'rgb(18, 24, 31)' }}>
-        <div className="backdrop-blur-md rounded-2xl shadow-2xl p-8 max-w-lg w-full mx-4 text-center" style={{ backgroundColor: 'rgba(22, 29, 39, 0.9)' }}>
+      <div
+        className="fixed inset-0 flex items-center justify-center p-4"
+        style={{ backgroundColor: "rgb(18, 24, 31)" }}
+      >
+        <div
+          className="backdrop-blur-md rounded-2xl shadow-2xl p-8 max-w-lg w-full mx-4 text-center"
+          style={{ backgroundColor: "rgba(22, 29, 39, 0.9)" }}
+        >
           <div className="mx-auto mb-4 w-16 h-16 flex items-center justify-center bg-red-600 rounded-full animate-pulse">
             <svg
               className="w-8 h-8 text-white"
@@ -56,7 +66,9 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
             </svg>
           </div>
           <h2 className="text-3xl font-bold mb-2 text-white">{title}</h2>
-          <p className="text-gray-300 mb-6">{this.state.error?.message || message}</p>
+          <p className="text-gray-300 mb-6">
+            {this.state.error?.message || message}
+          </p>
           <div className="flex justify-center gap-4">
             <button
               onClick={this.handleRetry}
@@ -73,8 +85,12 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
           </div>
           {this.state.errorInfo && (
             <details className="mt-6 text-left text-xs text-gray-400 max-h-40 overflow-auto">
-              <summary className="cursor-pointer text-gray-300">View technical details</summary>
-              <pre className="whitespace-pre-wrap">{this.state.errorInfo.componentStack}</pre>
+              <summary className="cursor-pointer text-gray-300">
+                View technical details
+              </summary>
+              <pre className="whitespace-pre-wrap">
+                {this.state.errorInfo.componentStack}
+              </pre>
             </details>
           )}
         </div>

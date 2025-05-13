@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import LeftSideComponent from "../components/LeftSideComponent";
 import RightSideComponent from "../components/RightSideComponent";
 import { Divider } from "@mui/material";
 
 const LandingPage: React.FC = () => {
+  const [open, setOpen] = useState(true);
+
   return (
     <div
       style={{
@@ -11,16 +13,13 @@ const LandingPage: React.FC = () => {
         flexDirection: "row",
         backgroundColor: "rgb(18,24,31)",
         color: "#fff",
+        gap: open ? "0px" : "40px", 
       }}
     >
       {/* Left side navigation */}
-      <LeftSideComponent />
-
+      <LeftSideComponent open={open} setOpen={setOpen} />
       <Divider />
-      {/* The rest of the page (right side) */}
-      <div style={{ flex: 1 }}>
-        <RightSideComponent />
-      </div>
+      <RightSideComponent />
     </div>
   );
 };

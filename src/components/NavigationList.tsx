@@ -22,7 +22,7 @@ import CrueltyFreeIcon from "@mui/icons-material/CrueltyFree";
 import HourglassEmptyIcon from "@mui/icons-material/HourglassEmpty";
 
 // Example nav data for each section
-const navSections = [
+export const navSections = [
   {
     title: "Explore",
     items: [

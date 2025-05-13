@@ -355,3 +355,113 @@ img {
     background-position: -200px -23px;
   }
 }
+
+/* -------- Tablet tweaks (≤900px) -------- */
+@media (max-width: 900px) {
+  /* tighten up the project column */
+  .MuiStack-root.listProject {
+    min-width: 120px;
+    max-width: 150px;
+  }
+
+  /* tighten blockchain column */
+  .listChain {
+    min-width: 50px;
+    max-width: 60px;
+  }
+
+  /* sale type */
+  .listSaleType {
+    min-width: 120px;
+    max-width: 150px;
+  }
+
+  /* status */
+  .listStatus {
+    min-width: 140px;
+    max-width: 160px;
+  }
+
+  /* progress */
+  .listProgress {
+    min-width: 120px;
+    max-width: 140px;
+  }
+
+  /* reduce cell padding */
+  .MuiPaper-root.listPaper,
+  .listHeader {
+    padding: 6px 16px;
+  }
+}
+
+/* -------- Mobile layout (≤600px) -------- */
+@media (max-width: 600px) {
+  /* remove the header row */
+  .listHeader {
+    display: none;
+  }
+
+  /* make each row a vertical stack */
+  .MuiStack-root.listRow {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+    gap: 8px;
+  }
+
+  /* make every “column” full width */
+  .MuiStack-root.listProject,
+  .listChain,
+  .listSaleType,
+  .listStatus,
+  .listProgress {
+    width: 100%;
+    min-width: auto;
+    max-width: none;
+  }
+
+  /* give a card‐like spacing */
+  .MuiPaper-root.listPaper {
+    padding: 12px;
+    border-radius: 8px;
+  }
+
+  /* stack the badge and project name more tightly */
+  .MuiStack-root.listProject {
+    gap: 12px;
+  }
+
+  /* shrink the progress bar height */
+  .custom-progress-bar {
+    height: 6px;
+  }
+
+  /* reduce text sizes */
+  .listProjectName {
+    font-size: 0.9rem;
+  }
+  .listChainText,
+  .listStatusText,
+  .MuiTypography-root.listTimer,
+  .MuiTypography-root.listProgressLabel,
+  .MuiTypography-root.listProgressValue {
+    font-size: 0.7rem;
+  }
+}
+
+/* -------- Tablet header tweaks (≤900px) -------- */
+@media (max-width: 900px) {
+  .listHeader {
+    padding: 6px 12px 6px 8px;       /* tighter padding */
+    font-size: 0.85rem;              /* slightly smaller text */
+  }
+  .listHeader > .MuiStack-root {
+    gap: 8px;                        /* reduce spacing between columns */
+  }
+}
+@media (max-width: 600px) {
+  .listHeader {
+    display: none !important;
+  }
+}

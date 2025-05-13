@@ -54,6 +54,8 @@
   margin-left: 50%;
   top: -25px;
   border-radius: 50%;
+  z-index: 30;
+  pointer-events: none;
 }
 .salecard-topicon-inner {
   display: flex;
@@ -386,4 +388,38 @@
   border-width: 0px 0px thin;
   border-style: solid;
   border-color: rgba(145, 158, 171, 0.24);
+}
+@media (max-width: 899px) {
+  /* Make info items stack vertically on mobile/tablet */
+  .MuiGrid-root.salecard-info-item {
+    flex-basis: 100%;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .MuiStack-root.salecard-info-stack {
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  /* Make icon row wrap and center on smaller screens */
+  .salecard-icon-row {
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .salecard-icon-group {
+    justify-content: center;
+  }
+}
+@media (max-width: 899px) {
+  /* Existing changes... */
+
+  /* Remove divider on mobile/tablet */
+  .MuiDivider-root.salecard-info-divider {
+    display: none;
+  }
 }

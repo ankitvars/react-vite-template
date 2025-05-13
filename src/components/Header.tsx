@@ -1,3 +1,4 @@
+// src/components/Header.tsx
 import React, { useState, useEffect } from "react";
 import {
   AppBar,
@@ -8,6 +9,8 @@ import {
   Box,
   Paper,
   Link,
+  useTheme,
+  useMediaQuery,
 } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBullhorn } from "@fortawesome/free-solid-svg-icons";
@@ -20,6 +23,10 @@ const messages = [
 ];
 
 const Header: React.FC = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));      // <600px
+  const isTablet = useMediaQuery(theme.breakpoints.between("sm", "md")); // 600–900px
+
   const [currentMessage, setCurrentMessage] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -34,60 +41,121 @@ const Header: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Responsive typography sizes
+  const msgFontSize = isMobile
+    ? "0.7rem"
+    : isTablet
+      ? "0.8rem"
+      : "0.875rem";
+
+  const buttonFontSize = isMobile ? "0.65rem" : "0.75rem";
+  const iconSize = isMobile ? 10 : 12;
+  const gemFontSize = isMobile ? "0.65rem" : "0.75rem";
+
   return (
     <Paper
       elevation={4}
       sx={{
-        color: "rgb(255,255,255)",
-        backgroundColor: "rgba(18, 24, 31,0.6)",
+        color: "#fff",
+        backgroundColor: "rgba(18, 24, 31, 0.6)",
         border: "none",
         borderBottom: "1px solid rgba(145, 158, 171, 0.32)",
-        boxShadow: "0px 0px 0px rgba(0, 0, 0, 0.2)",
+        boxShadow: "none",
       }}
     >
       <AppBar position="static" color="transparent" elevation={0}>
-        <Toolbar>
+        <Toolbar
+          sx={{
+            flexDirection: isMobile || isTablet ? "column" : "row",
+            alignItems: isMobile || isTablet ? "stretch" : "center",
+            px: isMobile ? 1 : 2,
+            py: isMobile ? 0.5 : 1,
+          }}
+        >
+          {/* Left side marquee */}
           <Stack
             direction="row"
-            spacing={2}
+            spacing={1}
             alignItems="center"
-            sx={{ flexGrow: 1 }}
+            sx={{
+              flexGrow: 1,
+              mb: isMobile || isTablet ? 1 : 0,
+              overflow: "hidden",
+            }}
           >
             <Box
               display="flex"
               alignItems="center"
-              gap={1}
-              justifyContent="center"
-              className="relative overflow-hidden"
+              sx={{ position: "relative", width: "100%" }}
             >
               <Typography
-                variant="subtitle1"
+                variant="subtitle2"
                 component={Link}
-                href=""
+                href="#"
                 underline="none"
                 target="_blank"
-                sx={{ color: "inherit" }}
-                className={`transition-opacity duration-200 ease-in-out text-sm flex items-center ${
-                  isAnimating
-                    ? "opacity-0 translate-y-[-2px]"
-                    : "opacity-100 translate-y-[2px]"
-                }`}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  transition: "all 0.2s ease-in-out",
+                  fontSize: msgFontSize,
+                  opacity: isAnimating ? 0 : 1,
+                  transform: isAnimating
+                    ? "translateY(-2px)"
+                    : "translateY(2px)",
+                }}
               >
                 {currentMessage === 1 ? (
-                  <FontAwesomeIcon icon={faBullhorn} className="mr-2" />
+                  <FontAwesomeIcon
+                    icon={faBullhorn}
+                    style={{ marginRight: 4, fontSize: iconSize, color: "#fff" }}
+                  />
                 ) : (
-                  <>
-                    <span className="relative flex size-3 mx-2">
-                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[rgb(12,175,96)] opacity-75"></span>
-                      <span className="relative inline-flex h-3 w-3 rounded-full bg-[rgb(12,175,96)]"></span>
-                    </span>
-                  </>
-                )}{" "}
+                  <Box
+                    sx={{
+                      position: "relative",
+                      display: "inline-flex",
+                      width: iconSize,
+                      height: iconSize,
+                      mx: 0.5,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        inset: 0,
+                        borderRadius: "50%",
+                        animation: "ping 1s cubic-bezier(0,0,0.2,1) infinite",
+                        bgcolor: "rgb(12,175,96)",
+                        opacity: 0.75,
+                      }}
+                    />
+                    <Box
+                      sx={{
+                        position: "relative",
+                        width: iconSize,
+                        height: iconSize,
+                        borderRadius: "50%",
+                        bgcolor: "rgb(12,175,96)",
+                      }}
+                    />
+                  </Box>
+                )}
                 {messages[currentMessage]}
               </Typography>
             </Box>
           </Stack>
-          <Stack direction="row" spacing={2} alignItems="center">
+
+          {/* Right side controls */}
+          <Stack
+            direction="row"
+            spacing={isMobile ? 1 : 2}
+            alignItems="center"
+            sx={{
+              width: isMobile || isTablet ? "100%" : "auto",
+              justifyContent: isMobile || isTablet ? "space-between" : "flex-end",
+            }}
+          >
             <Link href="https://solsale.app" target="_blank" underline="none">
               <Button
                 variant="outlined"
@@ -96,14 +164,14 @@ const Header: React.FC = () => {
                   display: "flex",
                   alignItems: "center",
                   textTransform: "none",
-                  minHeight: "35px",
-                  padding: "5px 10px",
-                  borderRadius: "8px",
+                  fontSize: buttonFontSize,
+                  minHeight: isMobile ? 28 : 35,
+                  px: isMobile ? 1 : 2,
+                  borderRadius: 2,
                   border: "1px solid rgba(145, 158, 171, 0.32)",
                   "&:hover": {
                     backgroundColor: "rgba(145, 158, 171, 0.08)",
-                    borderColor: "rgba(255, 255, 255, 1)",
-                    borderWidth: "1px",
+                    borderColor: "#fff",
                   },
                 }}
               >
@@ -111,44 +179,47 @@ const Header: React.FC = () => {
                   component="img"
                   src={solLogo}
                   alt="solsale"
-                  sx={{ width: 12, height: 12, mr: 0.5 }}
+                  sx={{ width: iconSize, height: iconSize, mr: 0.5 }}
                 />
                 <Typography
                   variant="caption"
-                  fontSize="11px"
-                  color="#fff"
+                  fontSize={buttonFontSize}
                   fontWeight={600}
+                  color="#fff"
                 >
                   SolSale
                 </Typography>
               </Button>
             </Link>
+
             <Stack
               direction="row"
               spacing={0.5}
               alignItems="center"
               sx={{
+                px: 1,
+                py: 0.5,
+                borderRadius: 2,
+                cursor: "pointer",
                 "&:hover": {
                   backgroundColor: "rgba(145, 158, 171, 0.08)",
-                  borderRadius: "14px",
                 },
-                padding: "5px",
-                cursor: "pointer",
               }}
             >
-              <img
-                alt="gem point"
+              <Box
+                component="img"
                 src={gemPointSvg}
-                style={{
-                  maxWidth: "100%",
-                  display: "inline-block",
-                  verticalAlign: "bottom",
-                  height: "14px",
-                  width: "14px",
+                alt="gem point"
+                sx={{
+                  width: iconSize,
+                  height: iconSize,
                 }}
               />
-              <Typography variant="caption">0</Typography>
+              <Typography variant="caption" fontSize={gemFontSize} color="#fff">
+                0
+              </Typography>
             </Stack>
+
             <Button
               variant="outlined"
               color="inherit"
@@ -156,18 +227,18 @@ const Header: React.FC = () => {
                 display: "flex",
                 alignItems: "center",
                 textTransform: "none",
-                minHeight: "35px",
-                padding: "5px 12px",
-                borderRadius: "8px",
+                fontSize: buttonFontSize,
+                minHeight: isMobile ? 28 : 35,
+                px: isMobile ? 1 : 2,
+                borderRadius: 2,
                 border: "1px solid rgba(145, 158, 171, 0.32)",
                 "&:hover": {
                   backgroundColor: "rgba(145, 158, 171, 0.08)",
-                  borderColor: "rgba(255, 255, 255, 1)",
-                  borderWidth: "1px",
+                  borderColor: "#fff",
                 },
               }}
             >
-              <Typography variant="body2" color="#fff" fontWeight={700}>
+              <Typography variant="body2" fontSize={buttonFontSize} fontWeight={700} color="#fff">
                 Connect Wallet
               </Typography>
             </Button>

@@ -34,6 +34,7 @@ export interface SaleCardProps {
   hardcap: string;
   liquidity: string;
   lock: string;
+  id: string;
 }
 export const SaleCard: React.FC<SaleCardProps> = ({
   topImage,

@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { Box, Container } from "@mui/material";
+import { useEffect, useState } from "react";
 import salesData from "../constants/sampleData.json";
 import AnimatedSection from "./AnimatedSection";
 import Header from "./Header";
+import "./RightSideComponent.css";
 import { SaleList } from "./SaleList";
 import ToolbarComponent from "./ToolbarComponent";
-import "./RightSideComponent.css";
-import { Box, Container } from "@mui/material";
 
 const PAGE_SIZE = 25;
 interface SaleItem {
@@ -53,7 +53,7 @@ const RightSideComponent: React.FC = () => {
 
   const hasMore = visibleCount < currentData.length;
   console.log(currentData[0]);
-  const visibleData = currentData
+  const visibleData: any = currentData
     .slice(0, visibleCount)
 
     .map((item: SaleItem) => ({
@@ -63,7 +63,7 @@ const RightSideComponent: React.FC = () => {
 
   return (
     <Box className="rightSideComponent">
-      <Container maxWidth={false} className="rightSideContainer">
+      <Container maxWidth={false} className="rightSideContainer" id="scrollableDiv">
         <Header />
         <AnimatedSection />
         <ToolbarComponent

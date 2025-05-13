@@ -1,21 +1,32 @@
-import { Avatar, Box } from "@mui/material";
+// src/components/AnimatedSection.tsx
 import React from "react";
+import { Avatar, Box, useTheme, useMediaQuery } from "@mui/material";
 import trendingIcon from "../assets/icons/trending.svg";
 import AnimatedButton from "./AnimatedButton";
 import TrendingMarquee from "./TrendingMarquee";
 
 const AnimatedSection: React.FC = () => {
+  const theme = useTheme();
+  const isSm = useMediaQuery(theme.breakpoints.up("sm")); // show from sm (600px) up
+
+  if (!isSm) {
+    // hide entire section on xs
+    return null;
+  }
+
+  // (you can keep your existing responsive sizing logic here if needed)
   return (
     <Box
       sx={{
         display: "flex",
         alignItems: "center",
-        padding: "10px 20px",
+        paddingY: 2,
+        paddingX: 3,
         overflow: "hidden",
       }}
     >
       <AnimatedButton />
-      {/* Wrap the icon in a Box to control the hover effect */}
+
       <Box
         sx={{
           mx: 2,
@@ -45,6 +56,7 @@ const AnimatedSection: React.FC = () => {
           }}
         />
       </Box>
+
       <TrendingMarquee />
     </Box>
   );

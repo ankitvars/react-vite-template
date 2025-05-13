@@ -1,4 +1,4 @@
-.rightSideContainer {
+/* .rightSideContainer {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -23,7 +23,42 @@
 .rightSideComponent {
   -webkit-box-flex: 1;
   flex-grow: 1;
-  /* padding-top: 102px; */
   padding-bottom: 102px;
   width: fit-content;
+} */
+
+/* Make the outer wrapper fill the viewport and arrange its children vertically */
+.rightSideComponent {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 100vh;               /* full viewport height */
+  overflow: hidden;            /* prevent the entire right side from scrolling */
+}
+
+/* Inner container holds header/toolbar and the scrollable list area */
+.rightSideContainer {
+  flex: 1;                     /* take all leftover space below header */
+  padding: 0 24px;             /* horizontal padding */
+  box-sizing: border-box;
+  overflow-y: auto;            /* only this container scrolls vertically */
+  overflow-x: hidden;
+  border-left: 1px solid rgb(121, 134, 134);
+}
+
+/* Responsive padding controls */
+@media (min-width: 1280px) {
+  .rightSideContainer {
+    padding: 0 16px;
+  }
+}
+/* Hide scrollbar in WebKit browsers (Chrome, Safari) */
+.rightSideContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar in Firefox */
+.rightSideContainer {
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE and Edge */
 }

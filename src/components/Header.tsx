@@ -16,6 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBullhorn } from "@fortawesome/free-solid-svg-icons";
 import solLogo from "../assets/logo/sol_logo.svg";
 import gemPointSvg from "../assets/logo/GemPoints.svg";
+import './DetailInfo.css';
 
 const messages = [
   "Create a SOL sale without market ID FEES!",
@@ -111,35 +112,7 @@ const Header: React.FC = () => {
                     style={{ marginRight: 4, fontSize: iconSize, color: "#fff" }}
                   />
                 ) : (
-                  <Box
-                    sx={{
-                      position: "relative",
-                      display: "inline-flex",
-                      width: iconSize,
-                      height: iconSize,
-                      mx: 0.5,
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        position: "absolute",
-                        inset: 0,
-                        borderRadius: "50%",
-                        animation: "ping 1s cubic-bezier(0,0,0.2,1) infinite",
-                        bgcolor: "rgb(12,175,96)",
-                        opacity: 0.75,
-                      }}
-                    />
-                    <Box
-                      sx={{
-                        position: "relative",
-                        width: iconSize,
-                        height: iconSize,
-                        borderRadius: "50%",
-                        bgcolor: "rgb(12,175,96)",
-                      }}
-                    />
-                  </Box>
+                  <Box className="custom-box-jze36l" margin={1} />
                 )}
                 {messages[currentMessage]}
               </Typography>

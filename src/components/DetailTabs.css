@@ -1,0 +1,107 @@
+.MuiStack-root.tabs-outer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.MuiTab-root.tabs-root {
+  overflow: hidden;
+  min-height: 48px;
+  display: flex;
+  max-width: 100%;
+}
+
+.MuiTab-root.tabs-scrollbar {
+  overflow: auto hidden;
+  scrollbar-width: none;
+}
+
+.MuiTab-root.tabs-scroller {
+  position: relative;
+  display: inline-block;
+  flex: 1 1 auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  overflow: auto hidden;
+  margin: 0px;
+}
+
+.MuiTab-root.tabs-flex-container {
+  display: flex;
+}
+
+.MuiTab-root.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: transparent;
+  outline: 0px;
+  border: 0px;
+  margin: 0px;
+  border-radius: 0px;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: middle;
+  appearance: none;
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.25;
+  text-transform: capitalize;
+  font-family: __Poppins_08fb9f, __Poppins_Fallback_08fb9f, Helvetica, Arial, sans-serif;
+  max-width: 360px;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  white-space: normal;
+  text-align: center;
+  flex-direction: row;
+  color: inherit;
+  padding: 0px;
+  opacity: 1;
+  min-width: 48px;
+  min-height: 48px;
+  font-size: 0.75rem;
+  margin-right: 20px !important;
+}
+
+.MuiTab-root.tab-btn:not(:last-of-type) {
+  margin-right: 24px;
+}
+@media (min-width: 600px) {
+  .MuiTab-root.tab-btn:not(:last-of-type) {
+    margin-right: 40px;
+  }
+}
+
+.MuiTab-root.tab-btn.Mui-selected {
+  opacity: 1;
+}
+
+.tab-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  margin-top: 8px;
+}
+
+.MuiTab-root.tab-label {
+  font-size: 0.875rem;
+  font-family: inherit;
+}
+
+.MuiTab-root.tabs-indicator {
+  background-color: #1976d2; /* or your theme color */
+  height: 2px;
+}
+
+.MuiTab-root.custom-tabs-indicator {
+  position: absolute;
+  height: 2px;
+  bottom: 0px;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  left: 0px;
+}

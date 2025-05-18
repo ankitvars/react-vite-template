@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import AddIcon from "@mui/icons-material/Add";
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+// import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import './DetailInfo.css';
 import {
   Badge,
   Box,
@@ -90,7 +91,8 @@ export const SaleCard: React.FC<SaleCardProps> = ({
 
         <CardContent className="salecard-content">
           <Stack direction="row" alignItems="center" spacing={1} mb={1}>
-            <FiberManualRecordIcon className="salecard-status-dot" />
+            {/* <FiberManualRecordIcon className="salecard-status-dot" /> */}
+            <Box className="custom-box-jze36l" />
             <Typography variant="caption" className="salecard-status">
               {status}
             </Typography>

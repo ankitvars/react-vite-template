@@ -179,9 +179,9 @@ const ToolbarComponent: React.FC<ToolBarComponentProps> = ({
             display: "flex",
             justifyContent: isSmDown ? "flex-start" : "center",
             overflowX: isSmDown ? "auto" : "hidden",
-            scrollbarWidth: "none", // Firefox
-            msOverflowStyle: "none", // IE/Edge
-            "&::-webkit-scrollbar": { display: "none" }, // Chrome/Safari
+            scrollbarWidth: "none",
+            msOverflowStyle: "none", 
+            "&::-webkit-scrollbar": { display: "none" },
           }}
         >
           <Tabs

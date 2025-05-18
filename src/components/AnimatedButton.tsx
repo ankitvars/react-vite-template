@@ -1,5 +1,5 @@
-import { Avatar, Button as MUIButton } from "@mui/material";
-import mooniIcon from "../assets/chains/abey.png";
+import { Avatar, Button as MUIButton, Typography } from "@mui/material";
+import mooniIcon from "../assets/promotions/1.svg";
 import {
   motion,
   useAnimationFrame,
@@ -32,8 +32,10 @@ const AnimatedButton = () => {
           textTransform: "none",
         }}
       >
-        <Avatar src={mooniIcon} sx={{ width: 24, height: 24 }} />
-        GPR
+        <Avatar src={mooniIcon} sx={{ width: "24px", height: "fit-content" }} />
+        <Typography variant="body2" fontWeight={600}>
+          $CRX
+        </Typography>
       </MUIButton>
     </div>
   );
